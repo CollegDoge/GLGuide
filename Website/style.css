@@ -1,0 +1,144 @@
+/* STYLE.CSS - the stylesheet yeah */
+
+/* Page colors */
+
+:root { /* epic video https://www.youtube.com/watch?v=_gKEUYarehE  */
+  --base-color: white;
+  --base-secondary: #f1f3f4;
+  --text-color: #000;
+  --text-secondary: #252525;
+  --primary-color: #aaaaaa;
+  --primary-secondary: #fff1cf;
+  --accent-color: #ff9500;
+  --accent-secondary: #ffd801;
+}
+.darkmode {
+  --base-color: #070b1d;
+  --base-secondary: #101010;
+  --text-color: #fff;
+  --text-secondary: #e0e0e0;
+  --primary-color: #403c7f;
+  --primary-secondary: #063348;
+  --accent-color: #ff6200;
+  --accent-secondary: #ff2701;
+}
+
+/* General stuff */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: Arial, sans-serif; /* WILL GET A BETTER FONT LATER I SWEAR */
+  font-style: normal;
+}
+body {
+  min-height: 100vh;
+  background-color: var(--base-color);
+  color: var(--text-color);
+}
+
+header, section{
+  padding: 40px min(50px, 7%);
+}
+header {
+  background-color: var(--primary-color);
+  color: var(--primary-secondary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 10px;
+  left: 20px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+
+section {
+  background-color: var(--base-secondary);
+  display: flex;
+  flex-direction: row;
+  align-items: top;
+  justify-content: space-between;
+}
+section img {
+  width: 30%;
+  height: auto;
+  align-self: flex-end;
+  margin-right: 20px;
+}
+
+p {
+  margin: 10px;
+  color: var(--secondary-text);
+}
+
+footer {
+  background-color: var(--primary-color);
+  color: var(--primary-text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Button styles */
+
+button {
+  background: none;
+  color: var(--text-color);
+  border: none;
+  border-radius: 8px;
+  padding: 15px 20px;
+  margin: 5px;
+  cursor: pointer;
+  border: none;
+}
+.buttonreg{
+  background: linear-gradient(to right, var(--accent-color), var(--accent-secondary));
+}
+.buttonsec{
+  background: var(--primary-color);
+}
+
+/* Dark mode/light mode switch */
+
+#themeswitch{
+  height: 50px;
+  width: 50px;
+  padding: 0px;
+  border: 0px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 10px;
+  right: 20px;
+}
+#themeswitch svg{
+  height: 20px;
+  width: auto;
+  fill: var(--text-color)
+}
+#themeswitch svg:last-child{
+  display:none;
+}
+.darkmode #themeswitch svg:first-child{
+  display:none;
+}
+.darkmode #themeswitch svg:last-child{
+  display:block;
+}
