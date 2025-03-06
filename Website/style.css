@@ -14,7 +14,7 @@
 }
 .darkmode {
   --base-color: #101010;
-  --base-secondary: #070b1d;
+  --base-secondary: #0c1331;
   --text-color: #fff;
   --text-secondary: #e0e0e0;
   --primary-color: #403c7f;
@@ -30,7 +30,7 @@
   padding: 0;
 }
 html {
-  font-family: Arial, sans-serif; /* WILL GET A BETTER FONT LATER I SWEAR */
+  font-family: Inter, Arial, sans-serif; /* WILL GET A BETTER FONT LATER I SWEAR */
   font-style: normal;
 }
 body {
@@ -38,6 +38,7 @@ body {
   background-color: var(--base-color);
   color: var(--text-color);
 }
+
 
 header, section{
   padding: 40px min(50px, 7%);
@@ -63,6 +64,10 @@ main {
   align-items: center;
   justify-content: center;
   margin: 20px;
+}
+
+main h1 {
+  font-size: 40px;
 }
 
 section {
@@ -113,17 +118,20 @@ button {
   background: none;
   color: var(--text-color);
   border: none;
-  border-radius: 8px;
-  padding: 15px 20px;
+  border-radius: 50px;
   margin: 5px;
   cursor: pointer;
   border: none;
 }
 .buttonreg{
   background: linear-gradient(to right, var(--accent-color), var(--accent-secondary));
+  padding: 20px 50px;
+  font-size: 18px;
+  font-weight: bold;
 }
 .buttonsec{
   background: var(--primary-color);
+  padding: 15px 30px;
 }
 
 /* Dark mode/light mode switch */
