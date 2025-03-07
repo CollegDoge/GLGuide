@@ -69,18 +69,10 @@ header img {
   backdrop-filter: blur(10px);
 }
 
-#bgsvgtop {
+#bgsvg {
   position: absolute;
   top: 0;
   left: 0;
-  width: 40vw;
-  height: auto;
-  z-index: -1;
-}
-#bgsvgbot {
-  position: absolute;
-  bottom: 0;
-  right: 0;
   width: 40vw;
   height: auto;
   z-index: -1;
@@ -99,6 +91,10 @@ topmain {
   text-align: center;
   z-index: 1;
   padding: 150px 20px;
+  background-image: url('./img/orange.svg');
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: 40vw auto;
 }
 topmain h1 {
   font-size: 68px;
