@@ -77,7 +77,7 @@ section {
   align-items: top;
   justify-content: space-between;
 }
-section img {
+section input {
   width: 30%;
   height: auto;
   align-self: flex-end;

@@ -18,3 +18,8 @@ document.addEventListener("DOMContentLoaded", () => { // lets the page load befo
         }
     });
 });
+
+document.getElementById("playbtn").addEventListener("click", function() {
+    let audio = document.getElementById("audio");
+    audio.play();
+});
