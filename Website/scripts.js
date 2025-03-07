@@ -21,5 +21,20 @@ document.addEventListener("DOMContentLoaded", () => { // lets the page load befo
 
 document.getElementById("playbtn").addEventListener("click", function() {
     let audio = document.getElementById("audio");
-    audio.play();
+    if (audio.paused) {
+        audio.play();
+    } else {
+        audio.pause();
+    }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    window.addEventListener("scroll", function () {
+        const header = document.querySelector("header");
+        if (window.scrollY > 50) {
+            header.classList.add("scrolled");
+        } else {
+            header.classList.remove("scrolled");
+        }
+    });
 });
