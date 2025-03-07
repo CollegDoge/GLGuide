@@ -16,7 +16,7 @@
 }
 .darkmode {
   --base-color: #101010;
-  --base-secondary: #0c1331;
+  --base-secondary: #090b14;
   --text-color: #fff;
   --text-secondary: #e0e0e0;
   --primary-color: #403c7f;
@@ -28,10 +28,10 @@
 }
 
 /* General stuff */
-
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 html {
   font-family: Inter, Arial, sans-serif; /* WILL GET A BETTER FONT LATER I SWEAR */
@@ -41,19 +41,18 @@ body {
   min-height: 100vh;
   background-color: var(--base-color);
   color: var(--text-color);
+  position: relative;
+  overflow-x: hidden;
 }
 
-
-topmain, sectionmain, onboard {
-  padding: 40px min(50px, 7%);
-}
+/* Header */
 header {
   background-color: transparent;
   color: var(--primary-secondary);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed; 
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -70,13 +69,36 @@ header img {
   backdrop-filter: blur(10px);
 }
 
+#bgsvgtop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40vw;
+  height: auto;
+  z-index: -1;
+}
+#bgsvgbot {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40vw;
+  height: auto;
+  z-index: -1;
+}
+
+topmain, sectionmain, onboard {
+  padding: 40px min(50px, 7%);
+}
+
 topmain {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 100px;
-  margin-bottom: 50px;
+  text-align: center;
+  z-index: 1;
+  padding: 150px 20px;
 }
 topmain h1 {
   font-size: 68px;
@@ -90,7 +112,7 @@ sectionmain {
   background-color: var(--base-secondary);
   display: flex;
   flex-direction: row;
-  align-items: top;
+  align-items: flex-start;
   justify-content: space-between;
 }
 sectionmain input {
@@ -129,7 +151,6 @@ footer {
 }
 
 /* Button styles */
-
 button {
   background: none;
   color: var(--text-color);
@@ -175,7 +196,6 @@ button {
   align-items: center;
   position: relative;
   margin-left: auto;
-  right: 35px;
 }
 #themeswitch svg{
   height: 20px;
