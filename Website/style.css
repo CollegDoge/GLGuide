@@ -44,6 +44,23 @@ body {
   position: relative;
   overflow-x: hidden;
 }
+p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: var(--secondary-text);
+}
+
+/* responsive */
+@media (max-width: 1200px) {
+  .content {
+      flex-direction: column;
+      text-align: center;
+  }
+  .content-text {
+    flex: 1;
+    margin-left: 5%;
+  }
+}
 
 /* Header */
 header {
@@ -68,7 +85,6 @@ header img {
   background-color: var(--banner);
   backdrop-filter: blur(10px);
 }
-
 #bgsvg {
   position: absolute;
   top: 0;
@@ -106,17 +122,25 @@ topmain h1 {
 
 sectionmain {
   background-color: var(--base-secondary);
+  width: 100%;
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-between;
+  justify-content: center;
+  padding: 20px 100px;
 }
-sectionmain input {
-  width: 30%;
+.content {
+  max-width: 1600px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.content-text {
+  flex: 1;
+  margin-right: 5%;
+}
+.content input {
+  width: 600px;
   height: auto;
-  align-self: flex-end;
-  margin-right: 20px;
-  border-radius: 8px;
 }
 
 onboard {
@@ -130,11 +154,6 @@ onboard {
 onboard img {
   width: 50%;
   /* random image stuff will go here */
-}
-
-p {
-  margin: 10px;
-  color: var(--secondary-text);
 }
 
 footer {

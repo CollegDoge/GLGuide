@@ -19,12 +19,17 @@ document.addEventListener("DOMContentLoaded", () => { // lets the page load befo
     });
 });
 
+const audio = document.getElementById("audio");
+const playButton = document.getElementById("playbtn");
+
 document.getElementById("playbtn").addEventListener("click", function() {
     let audio = document.getElementById("audio");
     if (audio.paused) {
         audio.play();
+        playButton.src = "./img/bsod.png"; 
     } else {
         audio.pause();
+        playButton.src = "./img/laptop.png"; // TEMPORARY I SWEAR, stolen from gnome.org
     }
 });
 
