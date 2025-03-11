@@ -43,3 +43,12 @@ document.addEventListener("DOMContentLoaded", function () { // Header scroll blu
         }
     });
 });
+
+window.addEventListener("resize", function () { // Header text shorten
+    const logoText = document.querySelector(".logo-text");
+    if (window.innerWidth <= 768) {
+        logoText.textContent = "GLG";
+    } else {
+        logoText.textContent = "Geodes Linux Guide";
+    }
+});
