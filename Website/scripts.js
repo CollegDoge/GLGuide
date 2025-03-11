@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => { // lets the page load befo
         body.classList.add("darkmode");
     }
 
-    togglebtn.style.cursor = "pointer"; // so that the mouse pointer changes to the hand (yay)
+    togglebtn.style.cursor = "pointer"; // so that the mouse pointer changes to the hand
     
     togglebtn.addEventListener("click", () => { // click script
         body.classList.toggle("darkmode");
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => { // lets the page load befo
 const audio = document.getElementById("audio");
 const playButton = document.getElementById("playbtn");
 
-document.getElementById("playbtn").addEventListener("click", function() {
+document.getElementById("playbtn").addEventListener("click", function() { // funny audio button
     let audio = document.getElementById("audio");
     if (audio.paused) {
         audio.play();
@@ -33,7 +33,7 @@ document.getElementById("playbtn").addEventListener("click", function() {
     }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () { // Header scroll blur after y=50
     window.addEventListener("scroll", function () {
         const header = document.querySelector("header");
         if (window.scrollY > 50) {
