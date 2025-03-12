@@ -176,6 +176,11 @@ footer {
   padding: 20px;
 }
 
+.footer-right a {
+  text-align: right;
+  padding: 0 10px;
+}
+
 /* Button styles */
 button {
   background: none;
