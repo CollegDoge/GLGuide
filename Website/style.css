@@ -97,15 +97,18 @@ header {
   transition: background-color 0.3s ease;
   z-index: 1000;
 }
-header h2 {
-  padding-left: 1vw;
-  color: var(--text-color);
-  text-decoration: none;
-}
 header img { 
   height: 50px;
   width: 50px;
 }
+header a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+header a h2 {
+  padding-left: 10px;
+}
+
 .scrolled {
   background-color: var(--banner);
   backdrop-filter: blur(10px);
@@ -146,7 +149,7 @@ topmain h1 {
   color: transparent;
 }
 
-sectionmain {
+sectiontop {
   background-color: var(--base-secondary);
   width: 100%;
   display: flex;
@@ -154,7 +157,7 @@ sectionmain {
   padding: 40px 10vw;
 }
 
-onboard {
+sectionmiddle {
   background-color: var(--base-color);
   display: flex;
   flex-direction: column;
@@ -162,9 +165,8 @@ onboard {
   justify-content: space-between;
   padding: 20px;
 }
-onboard img {
+sectionmiddle img {
   width: 50%;
-  
 }
 
 footer {
