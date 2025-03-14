@@ -58,7 +58,6 @@ a {
   width: 100%;
   display: flex;
   flex-direction: row;
-  gap: 40px;
   align-items: center; 
   justify-content: center;
 }
@@ -162,31 +161,74 @@ sectionmiddle {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
-}
-sectionmiddle img {
-  width: 50%;
 }
 
 sectionbottom {
   background-color: var(--base-secondary);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   padding: 20px;
 }
 
 footer {
-  background-color: var(--primary-color);
+  background-color: var(--header-color);
   color: var(--primary-text);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 20px;
 }
 
 .footer-right a {
-  text-align: right;
+  font-weight: bold;
   padding: 0 10px;
+}
+
+/* Multi text animation on home page (https://www.youtube.com/watch?v=z6j7lXN3_eI) */
+.wrapper .content ol {
+  color: var(--text-color);
+  --height: 4rem;
+  height: var(--height);
+  line-height: var(--height);
+  overflow: hidden;
+  margin: 10px;
+}
+
+.wrapper .content ol li {
+  animation: slide-up 18s cubic-bezier(.83,0,.17,1) infinite;
+}
+
+@keyframes slide-up {
+  0%, 10% {
+    transform: translateY(0%);
+  }
+  15%, 25% {
+    transform: translateY(-100%);
+  }
+  30%, 40% {
+    transform: translateY(-200%);
+  }
+  45%, 55% {
+    transform: translateY(-300%);
+  }
+  60%, 70% {
+    transform: translateY(-400%);
+  }
+  75%, 85% {
+    transform: translateY(-500%);
+  }
+}
+
+.wrapper .content ol li span {
+  font-weight: 800;
+  background: linear-gradient(to right, var(--accent-color), var(--accent-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  white-space: nowrap;
 }
 
 /* Button styles */
