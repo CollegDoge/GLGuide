@@ -63,7 +63,7 @@ a {
 }
 .content-text {
   flex: 1;
-  line-height: 1.6;
+  line-height: 1.8;
   text-align: left;
   max-width: 700px;
 }
@@ -82,6 +82,12 @@ a {
   .content-text {
     text-align: center;
     margin: 0;
+  }
+  sectionmiddle {
+    align-items: center;
+  }
+  .middlesec1, .middlesec2, .middlesec3 {
+    align-self: center;
   }
 }
 
@@ -160,7 +166,25 @@ sectionmiddle {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  padding: 40px 10vw;
+}
+
+.middlesec1, .middlesec2, .middlesec3 {
+  margin-top: 50px;
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.middlesec1 { align-self: flex-end; }
+.middlesec2 { align-self: flex-start; }
+.middlesec3 { align-self: flex-end; }
+
+sectionmiddle img {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 8px;
 }
 
 sectionbottom {
@@ -170,6 +194,11 @@ sectionbottom {
   align-items: center;
   justify-content: space-between;
   padding: 20px;
+}
+sectionbottom img {
+  width: 100%;
+  max-width: 50vw;
+  border-radius: 8px;
 }
 
 footer {
