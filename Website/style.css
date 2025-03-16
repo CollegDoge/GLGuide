@@ -166,6 +166,7 @@ sectionmiddle {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   padding: 40px 10vw;
 }
 
@@ -177,9 +178,9 @@ sectionmiddle {
   margin-bottom: 20px;
 }
 
-.middlesec1 { align-self: flex-end; }
-.middlesec2 { align-self: flex-start; }
-.middlesec3 { align-self: flex-end; }
+.middlesec1 { align-self: flex-start; }
+.middlesec2 { align-self: flex-end; }
+.middlesec3 { align-self: flex-start; }
 
 sectionmiddle img {
   width: 100%;
