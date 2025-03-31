@@ -58,11 +58,15 @@ document.addEventListener("DOMContentLoaded", function () { // Header scroll blu
     });
 });
 
-window.addEventListener("resize", function () { // Header text shorten
-    const logoText = document.querySelector(".logo-text");
+function updateLogoText() {
+    const logoText = document.querySelector(".logo-text"); // Header text shorten
     if (window.innerWidth <= 768) {
         logoText.textContent = "GLG";
     } else {
         logoText.textContent = "Geodes Linux Guide";
     }
-});
+}
+// Check if it starts under 768
+updateLogoText();
+// Check for resizing
+window.addEventListener("resize", updateLogoText);
