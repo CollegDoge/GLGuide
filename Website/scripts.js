@@ -70,3 +70,24 @@ function updateLogoText() {
 updateLogoText();
 // Check for resizing
 window.addEventListener("resize", updateLogoText);
+
+
+
+function updateParaText() {
+    const logoText = document.querySelector(".para-text"); // Parahraph text shorten
+    const buttonShow = document.querySelector(".para-btn"); // Show read more button
+    if (window.innerWidth <= 768) {
+        logoText.textContent = "Windows 10 support is ending October this year, and that's bad news for millions of devices worldwide. Once support ends, Microsoft stops giving security updates. No patches for new vulnerabilities, no fixes for bugs and exploits.";
+        buttonShow.style.position = "relative";
+        buttonShow.style.left = "50%"; // to get it to center
+        buttonShow.style.transform = "translateX(-50%)";
+        buttonShow.style.display = "block";
+    } else {
+        logoText.textContent = "Windows 10 support is ending October this year, and that's bad news for millions of devices worldwide. Once support ends, Microsoft stops giving security updates. No patches for new vulnerabilities, no fixes for bugs and exploits. In other words, your PC becomes a sitting duck for hackers and malware, and your apps will eventually just stop being supported. This will lead to millions of (frankly, not even that old) devices being thrown out when they dont need to be. Windows 11 has its problems too, with privacy concerns, unwanted features/removal of features, and many AI features being shoved down your throat.";
+        buttonShow.style.display = "none";
+    }
+}
+// Check if it starts under 768
+updateParaText();
+// Check for resizing
+window.addEventListener("resize", updateParaText);

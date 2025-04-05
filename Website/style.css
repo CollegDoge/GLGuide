@@ -295,6 +295,18 @@ button {
   color: var(--base-color);
   padding: 15px 35px;
 }
+.para-btn {
+  padding: 8px 12px 8px 12px;
+  background: var(--primary-color);
+  color: var(--text-color);
+  text-align: center;
+}
+.para-btn:hover {
+  padding: 8px 12px 8px 12px;
+  background: var(--primary-other);
+  color: var(--base-color);
+  text-align: center;
+}
 
 /* Dark mode/light mode switch */
 
