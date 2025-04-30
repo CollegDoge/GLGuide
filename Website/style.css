@@ -34,7 +34,7 @@
   box-sizing: border-box;
 }
 html {
-  font-family: Inter, Arial, sans-serif; /* WILL GET A BETTER FONT LATER I SWEAR */
+  font-family: Inter, Arial, sans-serif;
   font-style: normal;
 }
 body {
@@ -83,12 +83,6 @@ a {
     text-align: center;
     margin: 0;
   }
-  sectionmiddle {
-    align-items: center;
-  }
-  .middlesec1, .middlesec2, .middlesec3 {
-    align-self: center;
-  }
   header .nav {
     display: none !important;
   }
@@ -99,6 +93,15 @@ a {
     font-size: 32px;
     align-items: center;
     color: var(--text-color);
+  }
+  sectiontop .para-text {
+    padding: 0 0 10px 0 !important;
+  }
+  sectionmiddle {
+    align-items: center;
+  }
+  .middlesec1, .middlesec2, .middlesec3 {
+    align-self: center;
   }
 }
 
@@ -190,7 +193,13 @@ sectiontop {
   background-color: var(--base-secondary);
   display: flex;
   justify-content: center;
-  padding: 40px 10vw;
+  padding: 60px 5vw;
+}
+sectiontop .para-text {
+  padding-right: 100px;
+}
+sectiontop input {
+  padding-top: 20px;
 }
 
 sectionmiddle {
@@ -204,8 +213,6 @@ sectionmiddle {
 
 .middlesec1, .middlesec2, .middlesec3 {
   margin-top: 50px;
-  width: 100%;
-  max-width: 800px;
   text-align: center;
   margin-bottom: 20px;
 }
