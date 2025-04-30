@@ -1,7 +1,9 @@
 /* STYLE.CSS - the stylesheet yeah */
 
-/* Page colors */
+/* Nerd Fonts */
+@import "https://www.nerdfonts.com/assets/css/webfont.css";
 
+/* Page colors */
 :root { /* epic video https://www.youtube.com/watch?v=_gKEUYarehE  */
   --base-color: white;
   --base-secondary: #f1f3f4;
@@ -34,7 +36,7 @@
   box-sizing: border-box;
 }
 html {
-  font-family: Inter, Arial, sans-serif;
+  font-family: Inter, NerdFontsSymbols Nerd Font, Arial, sans-serif;
   font-style: normal;
 }
 body {
@@ -107,9 +109,9 @@ a {
   }
   header .hamburger {
     display: flex !important;
-    gap: 15px;
+    gap: 25px;
     padding: 0 15px 0 15px;
-    font-size: 32px;
+    font-size: 20px;
     align-items: center;
     color: var(--text-color);
   }
@@ -149,16 +151,14 @@ header {
 
 header .nav {
   display: flex;
-  gap: 15px;
+  gap: 20px;
   padding: 0 15px 0 15px;
   align-items: center;
   color: var(--text-color);
 }
-
 header .hamburger {
   display: none;
 }
-
 .scrolled {
   background-color: var(--banner);
   backdrop-filter: blur(10px);
