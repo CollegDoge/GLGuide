@@ -83,6 +83,25 @@ a {
     text-align: center;
     margin: 0;
   }
+  sectiontop .para-text {
+    padding: 0 0 10px 0 !important;
+  }
+  sectionmiddle {
+    align-items: center;
+  }
+  sectionmiddle .middlesec1, .middlesec2, .middlesec3 {
+    align-self: center;
+  }
+}
+
+/* responsive but smaller screen */
+@media (max-width: 768px) {
+  .topbg1 {
+    width: 70% !important; 
+  }
+  .topbg2 {
+    width: 70% !important;
+  }
   header .nav {
     display: none !important;
   }
@@ -93,15 +112,6 @@ a {
     font-size: 32px;
     align-items: center;
     color: var(--text-color);
-  }
-  sectiontop .para-text {
-    padding: 0 0 10px 0 !important;
-  }
-  sectionmiddle {
-    align-items: center;
-  }
-  .middlesec1, .middlesec2, .middlesec3 {
-    align-self: center;
   }
 }
 
@@ -153,16 +163,6 @@ header .hamburger {
   background-color: var(--banner);
   backdrop-filter: blur(10px);
 }
-
-#bgsvg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 40vw;
-  height: auto;
-  z-index: -1;
-}
-
 topmain, sectionmain, onboard {
   padding: 40px min(50px, 7%);
 }
@@ -176,10 +176,7 @@ topmain {
   text-align: center;
   z-index: 1;
   padding: 150px 20px;
-  background-image: url('./img/orange.svg');
-  background-position: bottom right;
-  background-repeat: no-repeat;
-  background-size: 40vw auto;
+  overflow: hidden; 
 }
 topmain h1 {
   font-size: 68px;
@@ -187,6 +184,28 @@ topmain h1 {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+.topbg1,
+.topbg2 {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+}
+.topbg1 {
+  top: 0;
+  left: 0;
+  width: 40%;}
+.topbg2 {
+  bottom: 0;
+  right: 0;
+  width: 40%;
+}
+
+.topbg1 img,
+.topbg2 img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 sectiontop {
@@ -210,22 +229,19 @@ sectionmiddle {
   text-align: center;
   padding: 40px 10vw;
 }
-
 .middlesec1, .middlesec2, .middlesec3 {
   margin-top: 50px;
   text-align: center;
   margin-bottom: 20px;
 }
-
-.middlesec1 { align-self: flex-start; }
-.middlesec2 { align-self: flex-end; }
-.middlesec3 { align-self: flex-start; }
-
 sectionmiddle img {
   width: 100%;
   max-width: 800px;
   border-radius: 8px;
 }
+.middlesec1 { align-self: flex-start; }
+.middlesec2 { align-self: flex-end; }
+.middlesec3 { align-self: flex-start; }
 
 sectionbottom {
   background-color: var(--base-secondary);
