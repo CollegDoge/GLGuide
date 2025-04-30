@@ -43,7 +43,7 @@ document.getElementById("playbtn").addEventListener("click", function() { // fun
         playButton.src = "./img/bsod.png"; 
     } else {
         audio.pause();
-        playButton.src = "./img/laptop.png"; // TEMPORARY I SWEAR, stolen from gnome.org
+        playButton.src = "./img/laptop.png"; // TEMPORARY I SWEAR, stolen from gnome.org, slightly edited
     }
 });
 
@@ -70,7 +70,6 @@ function updateLogoText() {
 updateLogoText();
 // Check for resizing
 window.addEventListener("resize", updateLogoText);
-
 
 
 function updateParaText() {

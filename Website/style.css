@@ -89,6 +89,17 @@ a {
   .middlesec1, .middlesec2, .middlesec3 {
     align-self: center;
   }
+  header .nav {
+    display: none !important;
+  }
+  header .hamburger {
+    display: flex !important;
+    gap: 15px;
+    padding: 0 15px 0 15px;
+    font-size: 32px;
+    align-items: center;
+    color: var(--text-color);
+  }
 }
 
 /* Header */
@@ -106,13 +117,33 @@ header {
   transition: background-color 0.3s ease;
   z-index: 1000;
 }
-header img { 
+.header-left {
+  display: flex;
+  align-items: center;
+}
+.header-left img { 
   height: 50px;
   width: auto;
   padding-left: 10px;
 }
-header h2 {
+.header-left h2 {
   padding-left: 10px;
+}
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+header .nav {
+  display: flex;
+  gap: 15px;
+  padding: 0 15px 0 15px;
+  align-items: center;
+  color: var(--text-color);
+}
+
+header .hamburger {
+  display: none;
 }
 
 .scrolled {
@@ -313,9 +344,6 @@ button {
 #themeswitch{
   height: 50px;
   width: 50px;
-  padding: 0px;
-  border: 0px;
-  background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -324,7 +352,6 @@ button {
 }
 #themeswitch svg{
   height: 20px;
-  width: auto;
   fill: var(--text-color)
 }
 #themeswitch svg:last-child{
