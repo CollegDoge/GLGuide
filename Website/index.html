@@ -21,27 +21,28 @@
         </div>
         <div class="header-right">
             <nav class="nav">
-                <div class="nav-item"><b class="nf-dev-archlinux"></b> Distros
+                <div class="nav-item"><p class="nf-dev-archlinux"> Distros</p>
                     <div class="dropdown">
                     </div>
                 </div>
-                <div class="nav-item"><b class="nf-dev-linux"></b> Topics
+                <div class="nav-item"><p class="nf-dev-linux"> Topics</p>
                     <div class="dropdown">
                     </div>
                 </div>
-                <div class="nav-item"><b class="nf-fa-screwdriver_wrench"></b> Guides
+                <div class="nav-item"><p class="nf-fa-screwdriver_wrench"> Guides</p>
                     <div class="dropdown">
                     </div>
                 </div>
             </nav>
-            <div class="hamburger" onclick="toggleSidebar()">&#9776;</div>
+            <div class="hamburger" onclick="toggleSidebar()"><p class="nf-fa-bars"></p></div>
             <button id="themeswitch">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"/></svg>
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"/></svg>
+                <p class="nf-oct-moon"></p>
+                <p class="nf-md-white_balance_sunny"></p>
             </button>
         </div>
     </header>
-    <topmain>
+
+    <div class="topmain">
         <div class="topbg1">
             <img src="./img/purple.svg">
         </div>
@@ -52,55 +53,61 @@
         <p>Begin your Linux journey today, and for free!</p>
         <button type="button" class="buttonreg" onclick="location.href='./pages/guides/gettingstarted.html'">Get Started</button>
         <button type="button" class="buttonsec" onclick="location.href='./pages/topics/whatislinux.html'">What is Linux?</button>
-    </topmain>
-    <sectiontop>
+    </div>
+
+    <div class="sectiontop">
         <div class="content">
             <div class="content-text">
                 <h2>Windows 10 Support Is Ending Soon..</h2>
                 <p class="para-text">Windows 10 support is ending October this year, and that's bad news for millions of devices worldwide. Once support ends, Microsoft stops giving security updates. No patches for new vulnerabilities, no fixes for bugs and exploits. In other words, your PC becomes a sitting duck for hackers and malware, and your apps will eventually just stop being supported. This will lead to millions of (frankly, not even that old) devices being thrown out when they dont need to be. Windows 11 has its problems too, with privacy concerns, unwanted features/removal of features, and many AI features being shoved down your throat.</p>
-                <button class="para-btn">Read More  ⮟</button>
+                <button class="para-btn nerd-font-button"><p class="nf-fa-angle_down">  Read More</p></button>
             </div>
             <input type="image" src="./img/laptop.png" id="playbtn"/> 
             <audio id="audio" src="linux.mp3"></audio>
         </div>
-    </sectiontop>
-    <sectionmiddle>
-        <div class="wrapper">
-            <h1 class="content">
-                Start your Linux
-                <ol>
-                    <li><span>Experience</span></li>
-                    <li><span>Workflows</span></li>
-                    <li><span>Journeys</span></li>
-                    <li><span>Expidition</span></li>
-                    <li><span>Migration</span></li>
-                    <li><span>Computer</span></li>
-                </ol>
-                🐧
-            </h1>
-            <p>..by checking out these awesome desktop experiences below!</p>
+    </div>
+
+    <div class="sectionmiddle">
+        <div class="background-grid"></div>
+        <div class="gradient"></div>
+        <div class="content-wrapper">
+            <div class="wrapper">
+                <h1 class="content">
+                    Start your Linux
+                    <ol>
+                        <li><span>Experience</span></li>
+                        <li><span>Workflows</span></li>
+                        <li><span>Journeys</span></li>
+                        <li><span>Expidition</span></li>
+                        <li><span>Migration</span></li>
+                        <li><span>Computer</span></li>
+                    </ol>
+                    🐧
+                </h1>
+                <p>..by checking out these awesome desktop experiences below!</p>
+            </div>
+            <div class="middlesec1">
+                <img src="./img/kde1.png">
+                <h3>Familiar, feature rich desktop for Windows Users</h3>
+                <p>KDE Plasma Desktop - Running on Fedora Linux</p>
+            </div>
+            <div class="middlesec2">
+                <img src="./img/gnome1.png">
+                <h3>Want a more simple, out of your way computing experience?</h3>
+                <p>GNOME Desktop - Running on Fedora Linux</p>
+            </div>
+            <div class="middlesec3">
+                <img src="./img/hyprland1.png">
+                <h3>Advanced tiling window manager for maximum efficiency</h3>
+                <p>Hyprland Compositor - Running on Arch Linux</p>
+            </div>
         </div>
-        <div class="middlesec1">
-            <img src="./img/kde1.png">
-            <h3>Familiar, feature rich desktop for Windows Users</h3>
-            <p>KDE Plasma Desktop - Running on Fedora Linux</p>
-        </div>
-        <div class="middlesec2">
-            <img src="./img/gnome1.png">
-            <h3>Want a more simple, out of your way computing experience?</h3>
-            <p>GNOME Desktop - Running on Fedora Linux</p>
-        </div>
-        <div class="middlesec3">
-            <img src="./img/hyprland1.png">
-            <h3>Advanced tiling window manager for maximum efficiency</h3>
-            <p>Hyprland Compositor - Running on Arch Linux</p>
-        </div>
-    </sectionmiddle>
-    <sectionbottom>
+    </div>
+    <div class="sectionbottom">
         <h1>Lets dive in!</h1>
         <p>Lets find out what Linux Distribution will work for you</p>
         <img src="./img/brick.jpg">
-    </sectionbottom>
+    </div>
     <footer>
         <p>&copy; 2025 - Geodes Crappy Web Desings</p>
         <div class="footer-right">

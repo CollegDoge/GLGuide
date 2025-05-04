@@ -90,3 +90,20 @@ function updateParaText() {
 updateParaText();
 // Check for resizing
 window.addEventListener("resize", updateParaText);
+
+// gradient effect
+const section = document.querySelector('.sectionmiddle');
+const gradient = section.querySelector('.gradient');
+
+section.addEventListener('mousemove', e => {
+  const rect = section.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+  section.style.setProperty('--x', `${x}px`);
+  section.style.setProperty('--y', `${y}px`);
+  gradient.style.opacity = '0.2';
+});
+
+section.addEventListener('mouseleave', () => {
+  gradient.style.opacity = '0';
+});
