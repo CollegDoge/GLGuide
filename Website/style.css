@@ -111,6 +111,9 @@ a {
     align-items: center;
     color: var(--text-color);
   }
+  .content-wrapper {
+    padding: 40px 5vw !important;
+  }
 }
 
 /* Header */
@@ -159,7 +162,7 @@ header .hamburger {
   background-color: var(--banner);
   backdrop-filter: blur(10px);
 }
-topmain, sectionmain, onboard {
+.topmain, .sectionmain, .onboard {
   padding: 40px min(50px, 7%);
 }
 
@@ -272,11 +275,11 @@ topmain, sectionmain, onboard {
   margin-bottom: 10px;
   text-align: center;
 }
-
 /* IMAGE ALIGNMENT*/
 .middlesec1 { align-self: flex-start; } 
 .middlesec2 { align-self: flex-end; }
 .middlesec3 { align-self: flex-start; }
+
 
 .sectionbottom {
   background-color: var(--base-secondary);
