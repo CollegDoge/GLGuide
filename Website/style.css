@@ -87,7 +87,7 @@ a {
     text-align: center;
     margin: 0;
   }
-  sectiontop .para-text {
+  .sectiontop .para-text {
     padding: 0 0 10px 0 !important;
   }
 }
