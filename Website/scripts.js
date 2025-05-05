@@ -1,3 +1,10 @@
+// FIRST LOAD
+window.onload = function() {
+
+}
+
+
+// THEME SWITCH
 document.addEventListener("DOMContentLoaded", () => { // theme switching
     const togglebtn = document.getElementById("themeswitch");
     const body = document.body;
@@ -33,6 +40,8 @@ document.addEventListener("DOMContentLoaded", () => { // theme switching
     });
 });
 
+
+// LAPTOP BUTTON
 const audio = document.getElementById("audio");
 const playButton = document.getElementById("playbtn");
 
@@ -47,6 +56,8 @@ document.getElementById("playbtn").addEventListener("click", function() { // fun
     }
 });
 
+
+// HEADER SCROLL
 document.addEventListener("DOMContentLoaded", function () { // Header scroll blur after y=50
     window.addEventListener("scroll", function () {
         const header = document.querySelector("header");
@@ -58,6 +69,8 @@ document.addEventListener("DOMContentLoaded", function () { // Header scroll blu
     });
 });
 
+
+// HEADER LOGO TEXT
 function updateLogoText() {
     const logoText = document.querySelector(".logo-text"); // Header text shorten
     if (window.innerWidth <= 768) {
@@ -72,6 +85,7 @@ updateLogoText();
 window.addEventListener("resize", updateLogoText);
 
 
+// PARAGRAPH TEXT
 function updateParaText() {
     const logoText = document.querySelector(".para-text"); // Parahraph text shorten
     const buttonShow = document.querySelector(".para-btn"); // Show read more button
@@ -91,7 +105,8 @@ updateParaText();
 // Check for resizing
 window.addEventListener("resize", updateParaText);
 
-// gradient effect
+
+// GRADIENT
 const section = document.querySelector('.sectionmiddle');
 const gradient = section.querySelector('.gradient');
 
@@ -107,3 +122,23 @@ section.addEventListener('mousemove', e => {
 section.addEventListener('mouseleave', () => {
   gradient.style.opacity = '0';
 });
+
+
+// NAVIGATION & NAV ITEM MENUS
+const hideheader = document.querySelector('header');
+
+function openNav() {
+    hideheader.style.opacity = '0';
+    document.getElementById("fullnav").style.height = "100vh";
+}
+function closeNav() {
+    hideheader.style.opacity = '1';
+    document.getElementById("fullnav").style.height = "0%";
+}
+ 
+function openNavItem() {
+    document.getElementById("myNav").style.height = "100%";
+}
+function closeNavItem() {
+    document.getElementById("myNav").style.height = "0%";
+} 

@@ -34,7 +34,7 @@
                     </div>
                 </div>
             </nav>
-            <div class="hamburger" onclick="toggleSidebar()"><p class="nf-fa-bars"></p></div>
+            <div class="hamburger" onclick="openNav()"><p class="nf-fa-bars"></p></div>
             <button id="themeswitch">
                 <p class="nf-oct-moon"></p>
                 <p class="nf-md-white_balance_sunny"></p>
@@ -115,5 +115,24 @@
             <a href="./pages/suggest.html">Suggest Changes</a>
         </div>
     </footer>
+
+    <div id="fullnav" class="overlay">
+        <b class="nav-title">Navigation</b>
+        <a href="javascript:void(0)" class="nav-closebtn" onclick="closeNav()">&times;</a>
+        <div class="navcontent">
+            <div class="nav-item"><p class="nf-dev-archlinux"> Distros</p>
+                <div class="dropdown">
+                </div>
+            </div>
+            <div class="nav-item"><p class="nf-dev-linux"> Topics</p>
+                <div class="dropdown">
+                </div>
+            </div>
+            <div class="nav-item"><p class="nf-fa-screwdriver_wrench"> Guides</p>
+                <div class="dropdown">
+                </div>
+            </div>
+        </div>
+    </div> 
 </body>
 </html>
