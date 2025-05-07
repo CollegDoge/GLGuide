@@ -268,19 +268,45 @@ header .hamburger {
   opacity: 0;
   transition: opacity 0.3s ease;
 }
-.sectionmiddle img { /* IMAGE SIZE */
+.sectionmiddle img {
   width: 100%;
   max-width: 800px;
   border-radius: 8px;
+  display: block;
+  z-index: 2;
+  position: relative;
+}
+.img-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 50px;
   margin-bottom: 10px;
-  text-align: center;
+  border-radius: 8px;
+}
+.img-container::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 101%;
+  height: 102%; /* looks weird otherwise, this is more consistent*/
+  transform: translate(-50%, -50%);
+  border-radius: 12px;
+  background-image: linear-gradient(45deg, var(--accent-color), var(--accent-secondary));
+  z-index: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+.img-container:hover::before {
+  opacity: 1;
 }
 /* IMAGE ALIGNMENT*/
 .middlesec1 { align-self: flex-start; } 
 .middlesec2 { align-self: flex-end; }
 .middlesec3 { align-self: flex-start; }
-
 
 .sectionbottom {
   background-color: var(--base-secondary);
