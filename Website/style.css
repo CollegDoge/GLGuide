@@ -323,18 +323,34 @@ header .hamburger {
 }
 
 footer {
+  display: flex;
   background-color: var(--header-color);
   color: var(--primary-text);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   padding: 20px;
 }
-
-.footer-right a {
+.footer-main {
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+}
+.footer-access {
+  color: var(--text-color);
+}
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  right: 0;
   font-weight: bold;
   padding: 0 10px;
+}
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  align-items: right;
+  color: var(--text-color)
 }
 
 /* Multi text animation on home page (https://www.youtube.com/watch?v=z6j7lXN3_eI) */
@@ -462,13 +478,13 @@ button {
 .overlay .nav-title {
   position: absolute;
   top: 25px;
-  left: 25px;
-  font-size: 18px;
+  left: 20px;
+  font-size: 25px;
 }
 .overlay .nav-closebtn {
   position: absolute;
   top: 8px;
-  right: 25px;
+  right: 20px;
   font-size: 40px;
   cursor: pointer;
 }
