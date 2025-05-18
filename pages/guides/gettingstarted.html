@@ -3,6 +3,16 @@
 
 <head>
     <meta charset="utf-8">
+    <base href="%BASE_PATH%">
+    <script>
+        (function() {
+            const isGithubPages = location.hostname.includes("github.io");
+            const repoName = "GeodesLinuxGuide";
+            const base = document.createElement('base');
+            base.href = isGithubPages ? `/${repoName}/` : '/';
+            document.head.appendChild(base);
+        })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Topic - Template</title>
     <link rel="icon" type="image/x-icon" href="/img/favicon.png">
