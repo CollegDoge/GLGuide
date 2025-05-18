@@ -15,6 +15,7 @@
   --primary-other: #7a788b;
   --accent-color: #ff9500;
   --accent-secondary: #ffd801;
+  --link-color: blue;
   --banner: rgba(210,210,210,0.5);
 }
 .darkmode {
@@ -28,6 +29,7 @@
   --primary-other: #736fad;
   --accent-color: #ff6200;
   --accent-secondary: #ff2701;
+  --link-color: aqua;
   --banner: rgba(25,25,25,0.5);
 }
 
@@ -56,6 +58,10 @@ p {
 a {
   text-decoration: none;
   color: var(--text-color);
+}
+.link {
+  color: var(--link-color);
+  text-decoration: underline;
 }
 .content {
   max-width: 1400px;
@@ -114,6 +120,27 @@ a {
   }
   .content-wrapper {
     padding: 40px 5vw !important;
+  }
+}
+
+/* if your screen is the size of an ant */
+@media (max-width: 380px) {
+  .topmain h1 {
+    font-size: 50px !important;
+  }
+  .buttonreg {
+    font-size: 15px !important;
+    padding: 18px 28px 18px 28px !important;
+  }
+  .buttonsec {
+    font-size: 12px !important;
+    padding: 10px 20px 10px 20px !important;
+  }
+  .sectionmiddle p {
+    font-size: 14px !important;
+  }
+  .sectionmiddle h3 {
+    font-size: 12px !important;
   }
 }
 
@@ -433,6 +460,7 @@ button {
   font-family: Inter, NerdFontsSymbols Nerd Font, Arial, sans-serif;
   font-size: 14px;
   padding: 2px 20px 2px 20px;
+  margin: 10px 0 20px 0;
   background: var(--primary-color);
   color: var(--text-color);
   text-align: center;
@@ -497,6 +525,12 @@ button {
   top: 90px; 
   width: 100%; 
   text-align: center; 
+}
+.overlaybottom {
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  text-align: center;
 }
 .nav-item {
   cursor: pointer;
