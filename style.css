@@ -125,6 +125,29 @@ img {
   .content-wrapper {
     padding: 40px 5vw !important;
   }
+  .gradient {
+    display: none !important;
+  }
+  .footer-container {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .footer-main {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+  }
+  .footer-right {
+    align-items: center !important;
+  }
+  .footer-right .footer-links,
+  .footer-right .footer-social {
+    align-items: center !important;
+    margin-top: 20px;
+  }
+  .footer-social {
+    margin-top: 5px !important;
+    justify-content: center !important;
+  }
 }
 
 /* if your screen is the size of an ant */
@@ -354,34 +377,59 @@ header .hamburger {
 }
 
 footer {
-  display: flex;
   background-color: var(--header-color);
   color: var(--primary-text);
   padding: 20px;
 }
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+/* left */
 .footer-main {
-  color: var(--text-color);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+.footer-title {
   display: flex;
   flex-direction: column;
-  justify-content: left;
-  align-items: left;
+  gap: 5px;
 }
-.footer-access {
-  color: var(--text-color);
+.footer-access img {
+  width: 40px;
+  height: 40px;
+}
+/* middle */
+.footer-social {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+.footer-social img {
+  width: 32px;
+  height: 32px;
+}
+/* right */
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+  align-items: flex-end;
 }
 .footer-links {
   display: flex;
   flex-direction: column;
-  right: 0;
-  font-weight: bold;
-  padding: 0 10px;
-}
-.footer-social {
-  display: flex;
-  flex-direction: column;
-  justify-content: right;
-  align-items: right;
-  color: var(--text-color)
+  text-align: right;
+  gap: 5px;
 }
 
 /* Multi text animation on home page (https://www.youtube.com/watch?v=z6j7lXN3_eI) */
@@ -509,14 +557,14 @@ button {
 }
 .overlay .nav-title {
   position: absolute;
-  top: 25px;
-  left: 20px;
+  top: 22px;
+  left: 18px;
   font-size: 25px;
 }
 .overlay .nav-closebtn {
   position: absolute;
   top: 8px;
-  right: 20px;
+  right: 18px;
   font-size: 40px;
   cursor: pointer;
 }
@@ -532,10 +580,10 @@ button {
 }
 .overlaybottom {
   position: absolute;
-  bottom: 40px;
+  bottom: 90px;
   width: 100%;
   text-align: center;
-}
+} 
 .nav-item {
   cursor: pointer;
 }
