@@ -107,6 +107,9 @@ img {
   .sectionbottom .bottom-text {
     margin: 0 !important;
   }
+  .footer-access a {
+    padding-left: 0 !important;
+  }
 }
 
 /* responsive but smaller screen */
@@ -396,6 +399,7 @@ footer {
   background-color: var(--header-color);
   color: var(--primary-text);
   padding: 20px;
+  padding-top: 40px;
 }
 .footer-container {
   display: flex;
@@ -417,9 +421,12 @@ footer {
   flex-direction: column;
   gap: 5px;
 }
-.footer-access img {
-  width: 40px;
-  height: 40px;
+.footer-access a {
+  font-size: 30px;
+  padding-left: 10px;
+}
+.footer-social a {
+  font-size: 30px;
 }
 /* middle */
 .footer-social {
