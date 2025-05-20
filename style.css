@@ -90,8 +90,8 @@ img {
 /* responsive */
 @media (max-width: 1200px) {
   .content {
-      flex-direction: column;
-      text-align: center;
+    flex-direction: column;
+    text-align: center;
   }
   .content-text {
     text-align: center;
@@ -99,6 +99,13 @@ img {
   }
   .sectiontop .para-text {
     padding: 0 0 10px 0 !important;
+  }
+  .sectionbottom {
+    flex-direction: column !important;
+    text-align: center !important;
+  }
+  .sectionbottom .bottom-text {
+    margin: 0 !important;
   }
 }
 
@@ -156,18 +163,18 @@ img {
     font-size: 50px !important;
   }
   .buttonreg {
-    font-size: 15px !important;
-    padding: 18px 28px 18px 28px !important;
+    font-size: 16px !important;
+    padding: 18px 36px 18px 36px !important;
   }
   .buttonsec {
     font-size: 12px !important;
-    padding: 10px 20px 10px 20px !important;
+    padding: 12px 24px 12px 24px !important;
   }
   .sectionmiddle p {
-    font-size: 14px !important;
+    font-size: 13px !important;
   }
   .sectionmiddle h3 {
-    font-size: 12px !important;
+    font-size: 14px !important;
   }
 }
 
@@ -364,15 +371,24 @@ header .hamburger {
 
 .sectionbottom {
   background-color: var(--base-secondary);
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 5vw;
+}
+.sectionbottom .bottom-text {
+  display: flex;
+  flex-direction: column;
+  margin-right: 100px;
+}
+.sectionbottom .bottom-items {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 20px;
+  gap: 20px;
 }
 .sectionbottom img {
-  width: 100%;
-  max-width: 50vw;
   border-radius: 8px;
 }
 
@@ -580,7 +596,7 @@ button {
 }
 .overlaybottom {
   position: absolute;
-  bottom: 90px;
+  bottom: 50px;
   width: 100%;
   text-align: center;
 } 

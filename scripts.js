@@ -101,9 +101,12 @@ function updateParaText() {
     }
 }
 
+// UPDATE PARAGRAPH TEXT
 updateParaText();
 window.addEventListener("resize", updateParaText);
 
+
+// READ MORE/LESS BUTTON
 function paraTextToggle() {
     const logoText = document.querySelector(".para-text");
     const button = document.querySelector(".para-btn");
@@ -138,7 +141,7 @@ section.addEventListener('mousemove', e => {
   gradient.style.opacity = '0.2';
 });
 
-section.addEventListener('mouseleave', () => {
+section.addEventListener('mouseleave', () => { // If the cursor leaves the section, then disable the gradient
   gradient.style.opacity = '0';
 });
 
