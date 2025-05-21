@@ -89,6 +89,9 @@ img {
 
 /* responsive */
 @media (max-width: 1200px) {
+  header {
+    justify-content: space-between !important;
+  }
   .content {
     flex-direction: column;
     text-align: center;
@@ -186,7 +189,7 @@ header {
   background-color: transparent;
   color: var(--primary-secondary);
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   position: fixed;
   top: 0;
@@ -392,7 +395,8 @@ header .hamburger {
   gap: 20px;
 }
 .sectionbottom img {
-  border-radius: 8px;
+  width: 550px;
+  height: auto;
 }
 
 footer {
