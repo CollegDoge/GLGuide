@@ -190,6 +190,12 @@ img {
   }
 }
 
+@media (max-height: 400px) {
+  .overlaybottom {
+    display: none !important;
+  }
+}
+
 /* Header */
 header {
   background-color: transparent;
@@ -236,10 +242,13 @@ header .hamburger {
   background-color: var(--banner);
   backdrop-filter: blur(10px);
 }
+
+/* Add padding to some sections*/
 .topmain, .sectionmain, .onboard {
   padding: 40px min(50px, 7%);
 }
 
+/* BELOW HEADER AREA */
 .topmain {
   position: relative;
   display: flex;
@@ -280,11 +289,12 @@ header .hamburger {
   width: 40%;
 }
 
+/* TOP SECTION */
 .sectiontop {
   background-color: var(--base-secondary);
   display: flex;
   justify-content: center;
-  padding: 60px 5vw;
+  padding: 180px 5vw;
 }
 .sectiontop .para-text {
   padding-right: 100px;
@@ -293,7 +303,8 @@ header .hamburger {
   padding-top: 20px;
 }
 
-.sectionmiddle { /* GENERAL - Middle Section */
+/* MIDDLE SECTION */
+.sectionmiddle { /* GENERAL */
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -321,7 +332,7 @@ header .hamburger {
 
   z-index: 1;
   width: 100%; 
-  max-width: 2200px;
+  max-width: 2400px;
   padding: 40px 10vw;
   margin: 0 auto;
 }
@@ -381,6 +392,7 @@ header .hamburger {
 .middlesec2 { align-self: flex-end; }
 .middlesec3 { align-self: flex-start; }
 
+/* BOTTOM SECTION */
 .sectionbottom {
   background-color: var(--base-secondary);
   flex-direction: row;
@@ -388,7 +400,7 @@ header .hamburger {
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 60px 5vw;
+  padding: 180px 5vw;
 }
 .sectionbottom .bottom-text {
   display: flex;
@@ -447,6 +459,8 @@ header .hamburger {
   top: 2%;
   right: 6%;
 }
+
+/* FOOTER */
 footer {
   background-color: var(--header-color);
   color: var(--primary-text);
@@ -516,11 +530,9 @@ footer {
   overflow: hidden;
   margin: 10px;
 }
-
 .wrapper .content ol li {
   animation: slide-up 18s cubic-bezier(.83,0,.17,1) infinite;
 }
-
 @keyframes slide-up {
   0%, 10% {
     transform: translateY(0%);
@@ -541,7 +553,6 @@ footer {
     transform: translateY(-500%);
   }
 }
-
 .wrapper .content ol li span {
   font-weight: 800;
   background: linear-gradient(to right, var(--accent-color), var(--accent-secondary));
@@ -562,7 +573,6 @@ button {
   border: none;
   transition: ease-in-out 0.2s;
 }
-
 .buttonreg{
   background: linear-gradient(to right, var(--accent-color), var(--accent-secondary));
   padding: 20px 50px;
@@ -574,7 +584,6 @@ button {
   color: var(--base-color);
   padding: 20px 55px;
 }
-
 .buttonsec{
   background: var(--primary-color);
   padding: 15px 30px;
