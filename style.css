@@ -141,6 +141,12 @@ img {
   .gradient {
     display: none !important;
   }
+  .sectionbottom .bottom-icons {
+    opacity: 0% !important;
+  }
+  .sectionbottom img {
+    width: 90% !important;
+  }
   .footer-container {
     flex-direction: column !important;
     align-items: stretch !important;
@@ -381,24 +387,66 @@ header .hamburger {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
   padding: 60px 5vw;
 }
 .sectionbottom .bottom-text {
   display: flex;
   flex-direction: column;
   margin-right: 100px;
+  z-index: 1;
 }
 .sectionbottom .bottom-items {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  z-index: 1;
 }
-.sectionbottom img {
+.sectionbottom .quizimg {
   width: 550px;
   height: auto;
 }
-
+.sectionbottom .bottom-icons {
+  z-index: 0;
+  opacity: 20%;
+}
+.bottom-fedora {
+  position: absolute;
+  width: 150px;
+  top: 6%;
+  left: 4%;
+}
+.bottom-arch {
+  position: absolute;
+  width: 190px;
+  bottom: 3%;
+  right: 4%;
+}
+.bottom-debian {
+  position: absolute;
+  width: 160px;
+  top: 14%;
+  left: 40%;
+}
+.bottom-mint {
+  position: absolute;
+  width: 180px;
+  bottom: 8%;
+  left: 47%;
+}
+.bottom-bazzite {
+  position: absolute;
+  width: 200px;
+  bottom: 3%;
+  left: 12%;
+}
+.bottom-popos {
+  position: absolute;
+  width: 150px;
+  top: 2%;
+  right: 6%;
+}
 footer {
   background-color: var(--header-color);
   color: var(--primary-text);
