@@ -135,11 +135,17 @@ img {
     color: var(--text-color);
     cursor: pointer;
   }
+  .sectiontop {
+    padding: 80px 5vw !important;
+  }
   .content-wrapper {
     padding: 40px 5vw !important;
   }
   .gradient {
     display: none !important;
+  }
+  .sectionbottom {
+    padding: 80px 5vw !important;
   }
   .sectionbottom .bottom-icons {
     opacity: 0% !important;

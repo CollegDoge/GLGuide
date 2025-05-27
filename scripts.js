@@ -157,10 +157,22 @@ function closeNav() {
     hideheader.style.opacity = '1';
     document.getElementById("fullnav").style.height = "0%";
 }
- 
-function openNavItem() {
-    document.getElementById("myNav").style.height = "100%";
+
+const menutitle = document.querySelector(".menu-title");
+const menuitems = document.querySelector("");
+
+function openMenu1() {
+    document.getElementById("menunav").style.height = "40%";
+    menutitle.textContent = "Distros";
 }
-function closeNavItem() {
-    document.getElementById("myNav").style.height = "0%";
+function openMenu2() {
+    document.getElementById("menunav").style.height = "40%";
+    menutitle.textContent = "Topics";
+}
+function openMenu3() {
+    document.getElementById("menunav").style.height = "40%";
+    menutitle.textContent = "Guides";
+}
+function closeMenu() {
+    document.getElementById("menunav").style.height = "0%";
 } 
