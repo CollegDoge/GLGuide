@@ -107,6 +107,10 @@ img {
     margin-right: 10% !important;
     margin-left: 10% !important;
     padding-left: 0 !important;
+    text-align: center !important;
+  }
+  .sectiontop .content-banner svg {
+    margin-left: 20px;
   }
   .sectionbottom {
     flex-direction: column !important;
@@ -144,9 +148,15 @@ img {
     padding: 80px 5vw !important;
   }
   .sectiontop .content-banner {
-    margin-right: 5% !important;
-    margin-left: 5% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8% !important;
+    margin-left: 8% !important;
     padding: 20px !important;
+  }
+  .sectiontop .content-banner svg {
+    display: none;
   }
   .content-wrapper {
     padding: 40px 5vw !important;
@@ -319,7 +329,9 @@ header .hamburger {
   padding-top: 20px;
 }
 .sectiontop .content-banner {
-  background-image: linear-gradient(#3477c8, #13417b);
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(#3477c8 0%, #13417b 75%);
   color: #fff;
   opacity: 1;
   padding: 16px 6px 16px 6px;
@@ -330,6 +342,18 @@ header .hamburger {
 }
 .sectiontop .content-banner a {
   color: #fff;
+  text-decoration: none;
+}
+.sectiontop .content-banner a:hover {
+  text-decoration: underline;
+}
+.sectiontop .content-banner svg {
+  width: 40px;
+  height: auto;
+  margin-right: 20px;
+}
+.sectiontop .content-banner svg rect {
+  fill: currentColor;
 }
 
 /* MIDDLE SECTION */
