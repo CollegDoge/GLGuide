@@ -103,6 +103,11 @@ img {
   .sectiontop .para-text {
     padding: 0 0 10px 0 !important;
   }
+  .sectiontop .content-banner {
+    margin-right: 10% !important;
+    margin-left: 10% !important;
+    padding-left: 0 !important;
+  }
   .sectionbottom {
     flex-direction: column !important;
     text-align: center !important;
@@ -137,6 +142,11 @@ img {
   }
   .sectiontop {
     padding: 80px 5vw !important;
+  }
+  .sectiontop .content-banner {
+    margin-right: 5% !important;
+    margin-left: 5% !important;
+    padding: 20px !important;
   }
   .content-wrapper {
     padding: 40px 5vw !important;
@@ -300,13 +310,26 @@ header .hamburger {
   background-color: var(--base-secondary);
   display: flex;
   justify-content: center;
-  padding: 180px 5vw;
+  padding: 150px 5vw;
 }
 .sectiontop .para-text {
   padding-right: 100px;
 }
 .sectiontop input {
   padding-top: 20px;
+}
+.sectiontop .content-banner {
+  background-image: linear-gradient(#3477c8, #13417b);
+  color: #fff;
+  opacity: 1;
+  padding: 16px 6px 16px 6px;
+  padding-left: 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+  margin-right: 20%;
+}
+.sectiontop .content-banner a {
+  color: #fff;
 }
 
 /* MIDDLE SECTION */
@@ -406,7 +429,7 @@ header .hamburger {
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 180px 5vw;
+  padding: 150px 5vw;
 }
 .sectionbottom .bottom-text {
   display: flex;
