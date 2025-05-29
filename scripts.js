@@ -3,7 +3,6 @@ window.onload = function() {
 
 }
 
-
 // THEME SWITCH
 document.addEventListener("DOMContentLoaded", () => { // theme switching
     const togglebtn = document.getElementById("themeswitch");
@@ -56,16 +55,42 @@ document.getElementById("playbtn").addEventListener("click", function() { // fun
     }
 });
 
+// HEADER SCROLL + MENU NAVIGATION
+let isMenuOpen = false;
+document.addEventListener("DOMContentLoaded", function () {
+    const header = document.querySelector("header");
 
-// HEADER SCROLL
-document.addEventListener("DOMContentLoaded", function () { // Header scroll blur after y=50
     window.addEventListener("scroll", function () {
-        const header = document.querySelector("header");
+        if (isMenuOpen) {
+            return;
+        }
         if (window.scrollY > 50) {
             header.classList.add("scrolled");
         } else {
             header.classList.remove("scrolled");
         }
+    });
+
+    const navItems = document.querySelectorAll('.nav-item');
+    const menutitle = document.querySelector('.menu-title');
+    const menunav = document.getElementById('menunav');
+
+    navItems.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            const title = item.getAttribute('data-menu');
+            menutitle.textContent = title;
+            menunav.style.height = '40%';
+            header.classList.remove("scrolled");
+            isMenuOpen = true;
+        });
+    });
+
+    document.querySelector('.menu').addEventListener('mouseleave', () => {
+        if (window.scrollY > 50) {
+            header.classList.add("scrolled");
+        }
+        menunav.style.height = '0%';
+        isMenuOpen = false;
     });
 });
 
@@ -157,22 +182,3 @@ function closeNav() {
     hideheader.style.opacity = '1';
     document.getElementById("fullnav").style.height = "0%";
 }
-
-const menutitle = document.querySelector(".menu-title");
-const menuitems = document.querySelector("");
-
-function openMenu1() {
-    document.getElementById("menunav").style.height = "40%";
-    menutitle.textContent = "Distros";
-}
-function openMenu2() {
-    document.getElementById("menunav").style.height = "40%";
-    menutitle.textContent = "Topics";
-}
-function openMenu3() {
-    document.getElementById("menunav").style.height = "40%";
-    menutitle.textContent = "Guides";
-}
-function closeMenu() {
-    document.getElementById("menunav").style.height = "0%";
-} 
