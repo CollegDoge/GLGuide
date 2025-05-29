@@ -474,7 +474,7 @@ header .hamburger {
 }
 .sectionbottom .bottom-icons {
   z-index: 0;
-  opacity: 20%;
+  opacity: 15%;
 }
 .bottom-fedora {
   position: absolute;
@@ -723,4 +723,28 @@ button {
 } 
 .nav-item {
   cursor: pointer;
+}
+.nav-item:hover .menu{
+  display: flex;
+}
+
+/* Menu nav */
+.menu {
+  display: flex;
+  position: fixed; 
+  height: 0;
+  width: 100%;
+  z-index: 2;
+  top: 0;
+  background-color: var(--base-color);
+  overflow-x: hidden;
+  transition: height 0.25s ease-in-out;
+  z-index: 1;
+}
+.menu .menucontent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 24px;
 }
