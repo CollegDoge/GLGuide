@@ -50,80 +50,69 @@ document.getElementById("playbtn").addEventListener("click", function() { // fun
     }
 });
 
-// HEADER SCROLL + MENU NAVIGATION
-let isMenuOpen = false;
+// HEADER SCROLL + MENU
 document.addEventListener("DOMContentLoaded", function () {
     const header = document.querySelector("header");
+    const menunav = document.getElementById('menunav');
+    const menutitle = document.querySelector('.menu-title');
+    const navItems = document.querySelectorAll('.nav-item');
+    const overlay = document.getElementById('page-overlay'); // overlay element
+    let isMenuOpen = false;
 
-    window.addEventListener("scroll", function () {
-        if (isMenuOpen) { // if menu is open, dont add blur
-            return;
+    function openMenu(title, selectedItem) { 
+        menutitle.textContent = title; // gets title from nav-item
+        menunav.style.height = '40%'; // shows the menu
+        header.classList.remove("scrolled");
+        overlay.classList.add('active'); // show overlay effect
+        isMenuOpen = true; // adds open flag
+
+        navItems.forEach(nav => nav.classList.remove('selected')); // for colour hover
+        selectedItem.classList.add('selected');
+    }
+
+    function closeMenu() {
+        menunav.style.height = '0%'; // hides menu
+        overlay.classList.remove('active'); // remove overlay effect
+        isMenuOpen = false; // removes open flag
+
+        if (window.scrollY > 50) { // adds header blur if scrolled after closing menu
+            header.classList.add("scrolled");
         }
-        if (window.scrollY > 50) {
-            header.classList.add("scrolled"); // add blur past y50
-        } else {
-            header.classList.remove("scrolled"); // remove if under y50
+
+        navItems.forEach(nav => nav.classList.remove('selected')); // removes colour hover if menu is closed
+    }
+
+    window.addEventListener("scroll", () => {
+        if (!isMenuOpen) {
+            header.classList.toggle("scrolled", window.scrollY > 50); // adds blur on scroll
         }
     });
 
-    const navItems = document.querySelectorAll('.nav-item');
-    const menutitle = document.querySelector('.menu-title');
-    const menunav = document.getElementById('menunav');
-
     navItems.forEach(item => {
-        item.addEventListener('mouseenter', () => { // checks for cursor
-            const title = item.getAttribute('data-menu');  
-            menutitle.textContent = title; // changes to current nav-item title
-            menunav.style.height = '40%'; // activates menu
-            header.classList.remove("scrolled"); // removes header blur
-            isMenuOpen = true;
+        item.addEventListener('mouseenter', () => { // adds title for each nav-item
+            const title = item.getAttribute('data-menu');
+            openMenu(title, item);
         });
     });
 
-    document.querySelector('.menu').addEventListener('mouseleave', () => {
-        if (window.scrollY > 50) {
-            header.classList.add("scrolled");
+    document.querySelector('.menu').addEventListener('mouseleave', closeMenu); // closes menu if mouse moves out of menu
+
+    document.addEventListener('click', (event) => { // closes menu if the user taps out of the menu
+        if (isMenuOpen && 
+            !menunav.contains(event.target) && 
+            !document.querySelector('.nav').contains(event.target)) { 
+            closeMenu();
         }
-        menunav.style.height = '0%'; // bye bye menu
-        isMenuOpen = false;
+    });
+
+    overlay.addEventListener('click', closeMenu); // overlay too, will hide menu if tapped.
+
+    window.addEventListener('resize', () => { // removes menu if screen size <768 (hamburger instead)
+        if (isMenuOpen && window.innerWidth <= 768) {
+            closeMenu();
+        }
     });
 });
-
-// TOUCHSCREEN, DISMISS MENU IF TAPPED ELSEWHERE
-document.addEventListener('click', (event) => {
-    const menunav = document.getElementById('menunav');
-    const nav = document.querySelector('.nav');
-    const header = document.querySelector('header');
-
-    if (isMenuOpen) {
-        if (!menunav.contains(event.target) && !nav.contains(event.target)) { // removes menu if tapped elsewhere
-            menunav.style.height = '0%'; 
-            isMenuOpen = false;
-
-            if (window.scrollY > 50) { 
-                header.classList.add("scrolled"); // adds header blur if past y50 again
-            }
-        }
-    }
-});
-
-// REMOVE MENU IF WINDOW IS TOO SMALL
-window.addEventListener('resize', () => {
-    const menunav = document.getElementById('menunav');
-    const header = document.querySelector('header');
-
-    if (window.innerWidth <= 768) {
-        if (isMenuOpen) {
-            menunav.style.height = '0%'; // removes menu if responsive
-            isMenuOpen = false;
-
-            if (window.scrollY > 50) {
-                header.classList.add("scrolled");
-            }
-        }
-    }
-});
-
 
 // HEADER LOGO TEXT
 function updateLogoText() {

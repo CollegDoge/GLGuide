@@ -235,7 +235,7 @@ header {
   width: 100%;
   padding: 5px 5px;
   transition: background-color 0.3s ease;
-  z-index: 2;
+  z-index: 5;
 }
 .header-left {
   display: flex;
@@ -685,7 +685,7 @@ button {
   height: 0;
   width: 100%;
   position: fixed; 
-  z-index: 3;
+  z-index: 6;
   left: 0;
   top: 0;
   background-color: var(--base-color);
@@ -709,6 +709,8 @@ button {
   font-size: 24px;
   padding-bottom: 24px;
 }
+
+/* Navigation bar */
 .navcontent {
   position: relative;
   top: 90px; 
@@ -723,6 +725,11 @@ button {
 } 
 .nav-item {
   cursor: pointer;
+  padding: 0 6px 0 6px;
+  border-radius: 10px;
+}
+.nav-item.selected {
+    background-color: var(--base-other);
 }
 
 /* Menu nav */
@@ -736,7 +743,7 @@ button {
   background-color: var(--base-color);
   overflow-x: hidden;
   transition: height 0.2s ease-in-out;
-  z-index: 1;
+  z-index: 4;
 }
 .menu .menucontent {
   display: flex;
@@ -744,4 +751,22 @@ button {
   justify-content: center;
   text-align: center;
   font-size: 24px;
+}
+
+/* page blur */
+#page-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(4px) brightness(0.7);
+    z-index: 3;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+#page-overlay.active {
+    opacity: 1;
+    pointer-events: all;
 }
