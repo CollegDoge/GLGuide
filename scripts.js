@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function openMenu(title, selectedItem) { 
         menutitle.textContent = title; // gets title from nav-item
-        menunav.style.height = '40%'; // shows the menu
+        menunav.style.height = '380px'; // shows the menu
         header.classList.remove("scrolled");
         overlay.classList.add('active'); // show overlay effect
         isMenuOpen = true; // adds open flag
