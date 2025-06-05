@@ -189,13 +189,43 @@ section.addEventListener('mouseleave', () => { // removes the gradient if mouse 
 
 
 // NAVIGATION & NAV ITEM MENUS
-const hideheader = document.querySelector('header'); // full screen nav, remove header
+const hideHeader = document.querySelector('header'); // full screen nav, remove header
 
 function openNav() { 
-    hideheader.style.opacity = '0';
+    hideHeader.style.opacity = '0';
     document.getElementById("fullnav").style.height = "100vh"; // height of screen
 }
 function closeNav() {
-    hideheader.style.opacity = '1';
+    hideHeader.style.opacity = '1';
     document.getElementById("fullnav").style.height = "0%"; // disappear
+}
+
+function imagePreview(src, description, link) {
+    const overlay = document.getElementById('page-overlay');
+    const modal = document.getElementById('image-preview');
+    const img = document.getElementById('preview-img');
+    const desc = document.getElementById('preview-desc');
+    const linkEl = document.getElementById('preview-link');
+
+    img.src = src; // source defined in img
+    desc.textContent = description; // description defined in img
+    linkEl.href = link; // link defined in img (weird formatting issue, but it seems to work)
+
+    if (window.innerWidth >= 768) {
+        overlay.classList.add('active');
+        modal.classList.add('active');
+
+        document.body.style.overflow = 'hidden'; // hide scroll
+
+        // click outside to close, yes i already did this in header
+        overlay.onclick = () => closePreview();
+        hideHeader.style.display = 'none';
+    }
+}
+
+function closePreview() { // yes im making this again for the image preview, too lazy lol
+    document.getElementById('page-overlay').classList.remove('active');
+    document.getElementById('image-preview').classList.remove('active');
+    document.body.style.overflow = '';
+    hideHeader.style.display = 'flex';
 }

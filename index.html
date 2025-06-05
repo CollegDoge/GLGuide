@@ -88,21 +88,21 @@
             </div>
             <div class="middlesec1">
                 <div class="img-container">
-                    <img src="./img/kde1.jpg">
+                    <img src="./img/kde1.jpg" onclick="imagePreview('./img/kde1.jpg', 'KDE Desktop', 'https://kde.org')">
                 </div>
                 <h3>Familiar, feature rich desktop for Windows Users</h3>
                 <p>KDE Plasma Desktop - Running on Fedora Linux</p>
             </div>
             <div class="middlesec2">
                 <div class="img-container">
-                    <img src="./img/gnome1.jpg">
+                    <img src="./img/gnome1.jpg" onclick="imagePreview('./img/gnome1.jpg', 'GNOME Desktop', 'https://gnome.org')">
                 </div>
                 <h3>Want a more simple, out of your way computing experience?</h3>
                 <p>GNOME Desktop - Running on Fedora Linux</p>
             </div>
             <div class="middlesec3">
                 <div class="img-container">
-                    <img src="./img/hyprland1.jpg">
+                    <img src="./img/hyprland1.jpg" onclick="imagePreview('./img/hyprland1.jpg', 'Hyprland Compositor', 'https://hyprland.org')">
                 </div>
                 <h3>Advanced tiling window manager for maximum efficiency</h3>
                 <p>Hyprland Compositor - Running on Arch Linux</p>
@@ -186,6 +186,18 @@
             </div>
         </div>
     </div>
+    
     <div id="page-overlay"></div>
+    
+    <div id="image-preview">
+        <div class="preview-content">
+            <img id="preview-img" src="" alt="Preview" />
+            <div class="preview-text">
+                <span id="preview-desc"></span>
+                <a id="preview-link" href="#">🔗</a>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
