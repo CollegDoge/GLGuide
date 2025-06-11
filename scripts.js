@@ -54,21 +54,36 @@ document.getElementById("playbtn").addEventListener("click", function() { // fun
 document.addEventListener("DOMContentLoaded", function () {
     const header = document.querySelector("header");
     const menunav = document.getElementById('menunav');
-    const menutitle = document.querySelector('.menu-title');
+    const menutitle = document.querySelector('.menu-title'); // get nav title
+    const menuitems = document.querySelector('.menu-items'); // get nav links
     const navItems = document.querySelectorAll('.nav-item');
-    const overlay = document.getElementById('page-overlay'); // overlay element
+    const overlay = document.getElementById('page-overlay'); // overlay element (blur and stuff)
     let isMenuOpen = false;
 
-    function openMenu(title, selectedItem) { 
-        menutitle.textContent = title; // gets title from nav-item
-        menunav.style.height = '380px'; // shows the menu
+    function openMenu(title, selectedItem) {
+        menutitle.textContent = title; // gets title
+        menuitems.innerHTML = ""; // clear existing items
+
+        const key = title.toLowerCase(); // grab the correct item list based on data-menu
+        const listContainer = document.querySelector(`.item-${key}`); // assumes class names like 'item-distros'
+
+        if (listContainer) {
+            const items = listContainer.querySelectorAll('li');// gets the list items and append to menuitems
+            items.forEach(li => {
+                const clonedLi = li.cloneNode(true);  
+                menuitems.appendChild(clonedLi);
+            });
+        }
+
+        menunav.style.height = '380px'; // max height, surely no screen is under 380px
         header.classList.remove("scrolled");
         overlay.classList.add('active'); // show overlay effect
         isMenuOpen = true; // adds open flag
 
-        navItems.forEach(nav => nav.classList.remove('selected')); // for colour hover
+        navItems.forEach(nav => nav.classList.remove('selected'));
         selectedItem.classList.add('selected');
     }
+
 
     function closeMenu() {
         menunav.style.height = '0%'; // hides menu
