@@ -61,6 +61,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let isMenuOpen = false;
 
     function openMenu(title, selectedItem) {
+        if (!title) return; // avoids null errors, chatgpt reccomended this ngl
+         
         menutitle.textContent = title; // gets title
         menuitems.innerHTML = ""; // clear existing items
 
@@ -125,6 +127,36 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('resize', () => { // removes menu if screen size <768 (hamburger instead)
         if (isMenuOpen && window.innerWidth <= 768) {
             closeMenu();
+        }
+    });
+});
+
+// FULLSCREEN NAV FUNCTIONALITY
+document.querySelectorAll('#fullnav .nav-item').forEach(navItem => {
+    const titleText = navItem.querySelector('p').textContent.trim().toLowerCase(); // e.g., "distros"
+    const dropdown = navItem.querySelector('.dropdown');
+    const listContainer = document.querySelector(`.item-${titleText}`); // same thing as earlier, see last section
+
+    if (dropdown && listContainer) {
+        const items = listContainer.querySelectorAll('li'); // gets lists
+        items.forEach(li => {
+            const clonedLi = li.cloneNode(true);
+            dropdown.appendChild(clonedLi);
+        });
+    }
+});
+
+
+document.querySelectorAll('#fullnav .nav-item').forEach(item => {
+    item.addEventListener('click', () => {
+        const isOpen = item.classList.contains('open'); // adds open (expanded) checking for items
+
+        document.querySelectorAll('#fullnav .nav-item').forEach(nav => {
+            nav.classList.remove('open'); // adds/removes entry
+        });
+
+        if (!isOpen) {
+            item.classList.add('open');
         }
     });
 });
@@ -203,7 +235,7 @@ section.addEventListener('mouseleave', () => { // removes the gradient if mouse 
 });
 
 
-// NAVIGATION & NAV ITEM MENUS
+// FULL NAVIGATION & NAV ITEM MENUS
 const hideHeader = document.querySelector('header'); // full screen nav, remove header
 
 function openNav() { 
