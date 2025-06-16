@@ -263,9 +263,10 @@ function imagePreview(src, description, link) {
         modal.classList.add('active');
 
         document.body.style.overflow = 'hidden'; // hide scroll
+        
+        img.onclick = () => linkEl.click(); // open link when you click on the image (same as preview-link)
+        overlay.onclick = () => closePreview(); // click outside to close, yes i already did this in header
 
-        // click outside to close, yes i already did this in header
-        overlay.onclick = () => closePreview();
         hideHeader.style.display = 'none';
     }
 }
