@@ -321,7 +321,7 @@ header .hamburger {
   background-color: var(--base-secondary);
   display: flex;
   justify-content: center;
-  padding: 150px 5vw;
+  padding: 120px 5vw;
 }
 .sectiontop .para-text {
   padding-right: 100px;
@@ -329,6 +329,9 @@ header .hamburger {
 .sectiontop input {
   padding-top: 20px;
   cursor: default;
+}
+#playbtn.fade-out {
+    opacity: 0;
 }
 .sectiontop .content-banner {
   display: flex;
@@ -816,7 +819,7 @@ button {
 
     width: 95%;
     height: auto;
-    max-width: 1200px;
+    max-width: 1500px;
 
     flex-direction: column;
     align-items: center;

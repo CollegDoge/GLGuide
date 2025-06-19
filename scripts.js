@@ -35,18 +35,57 @@ document.addEventListener("DOMContentLoaded", () => { // theme switching
 });
 
 
-// LAPTOP BUTTON
+// LAPTOP IMAGE FUN STUFF
 const audio = document.getElementById("audio");
 const playButton = document.getElementById("playbtn");
 
-document.getElementById("playbtn").addEventListener("click", function() { // funny audio button
-    let audio = document.getElementById("audio"); // play audio (kinda buggy but it works)
-    if (audio.paused) {
-        audio.play();
-        playButton.src = "./img/bsod.png";  // changes image to bsod funny
+let clickEnabled = true;
+let originalSrc = "./img/laptop.png";
+let altSrc = "./img/bsod.png";
+let scrollSrc = "./img/laptopkde.png";
+
+let imageList = [
+    "./img/laptopkde.png",
+    "./img/laptopgnome.png",
+    "./img/laptopcinnamon.png",
+];
+let currentImageIndex = 0;
+
+// LAPTOP BSOD BUTTON / IMAGE ROTATION
+playButton.addEventListener("click", () => {
+    if (clickEnabled) {
+        // Mode 1: Under Y 100 — toggle audio and laptop images
+        if (audio.paused) {
+            audio.play();
+            playButton.src = "./img/bsod.png";  // changes image to bsod funny
+        } else {
+            audio.pause();
+            playButton.src = "./img/laptop.png";  // back to regular img
+        }
     } else {
-        audio.pause();
-        playButton.src = "./img/laptop.png"; // TEMPORARY I SWEAR, stolen from gnome.org, slightly edited
+        currentImageIndex = (currentImageIndex + 1) % imageList.length;
+        playButton.src = imageList[currentImageIndex];
+    }
+});
+
+// FADE ANIMATION
+function fadeImage(imgElement, newSrc) {
+    imgElement.classList.add("fade-out"); // starts fade class
+
+    setTimeout(() => {
+        imgElement.src = newSrc; // sets new image
+        imgElement.classList.remove("fade-out"); // ends fade class
+    }, 200); // 200 is same transition time as specified in html
+}
+
+// IMAGE CHANGE ON SCROLL
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 480) { // if window is scrolled past 480, change the windows image to the KDE one
+        if (clickEnabled) {
+            clickEnabled = false;
+            audio.pause(); // stop audio if playing
+            fadeImage(playButton, scrollSrc);
+        }
     }
 });
 
