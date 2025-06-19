@@ -78,9 +78,15 @@ function fadeImage(imgElement, newSrc) {
     }, 200); // 200 is same transition time as specified in html
 }
 
+function getScrollThreshold() {
+    return window.innerWidth < 1200 ? 850 : 480;
+}
+
 // IMAGE CHANGE ON SCROLL
 window.addEventListener("scroll", () => {
-    if (window.scrollY > 480) { // if window is scrolled past 480, change the windows image to the KDE one
+    const threshold = getScrollThreshold();
+
+    if (window.scrollY > threshold) { // if window is scrolled past the windows threshold (different per screen res), change the windows image to the KDE one
         if (clickEnabled) {
             clickEnabled = false;
             audio.pause(); // stop audio if playing
