@@ -122,6 +122,9 @@ img {
   .footer-access a {
     padding-left: 0 !important;
   }
+  #image-preview {
+    width: 90% !important;
+  }
 }
 
 /* responsive but smaller screen */
@@ -817,7 +820,7 @@ button {
     border-radius: 10px;
     padding: 4px;
 
-    width: 95%;
+    width: 70%;
     height: auto;
     max-width: 1500px;
 

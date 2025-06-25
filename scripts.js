@@ -70,12 +70,17 @@ playButton.addEventListener("click", () => {
 
 // FADE ANIMATION
 function fadeImage(imgElement, newSrc) {
-    imgElement.classList.add("fade-out"); // starts fade class
+    const tempImg = new Image();
+    tempImg.src = newSrc;
 
-    setTimeout(() => {
-        imgElement.src = newSrc; // sets new image
-        imgElement.classList.remove("fade-out"); // ends fade class
-    }, 200); // 200 is same transition time as specified in html
+    tempImg.onload = () => {
+        imgElement.classList.add("fade-out");
+
+        setTimeout(() => {
+            imgElement.src = newSrc;
+            imgElement.classList.remove("fade-out");
+        }, 200);
+    };
 }
 
 function getScrollThreshold() {
