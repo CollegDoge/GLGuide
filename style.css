@@ -92,6 +92,9 @@ img {
   .menu .container {
     width: 95% !important;
   }
+  .menu .menu-items {
+    font-size: 18px !important;
+  }
   .content {
     flex-direction: column;
     text-align: center;
@@ -773,20 +776,33 @@ button {
 }
 .menu .menucontent {
   display: flex;
-  align-items: flex-start;
+  text-align: center;
+  align-items: center;
   font-size: 24px;
   padding-top: 80px; 
 }
 .menu .menu-items {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  grid-auto-flow: column;
+  gap: 6px 32px;
+  width: 100%;
   padding-top: 20px;
-  font-size: 18px;
+  font-size: 20px;
 }
 .menu .menu-items li {
-  margin: 5px;
-  list-style-type: none;
+  list-style: none;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+
+  height: 90px;
+  margin-bottom: 18px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--base-other);
+  text-align: center;
+  gap: 8px;
 }
 
 /* page blur */

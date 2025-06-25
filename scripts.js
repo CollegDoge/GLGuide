@@ -104,36 +104,48 @@ window.addEventListener("scroll", () => {
 document.addEventListener("DOMContentLoaded", function () {
     const header = document.querySelector("header");
     const menunav = document.getElementById('menunav');
-    const menutitle = document.querySelector('.menu-title'); // get nav title
     const menuitems = document.querySelector('.menu-items'); // get nav links
     const navItems = document.querySelectorAll('.nav-item');
     const overlay = document.getElementById('page-overlay'); // overlay element (blur and stuff)
     let isMenuOpen = false;
 
     function openMenu(title, selectedItem) {
-        if (!title) return; // avoids null errors, chatgpt reccomended this ngl
-         
-        menutitle.textContent = title; // gets title
-        menuitems.innerHTML = ""; // clear existing items
+        menuitems.innerHTML = "";
 
-        const key = title.toLowerCase(); // grab the correct item list based on data-menu
-        const listContainer = document.querySelector(`.item-${key}`); // assumes class names like 'item-distros'
+        const key = title.toLowerCase();
+        const listContainer = document.querySelector(`.item-${key}`);
 
         if (listContainer) {
-            const items = listContainer.querySelectorAll('li');// gets the list items and append to menuitems
-            items.forEach(li => {
-                const clonedLi = li.cloneNode(true);  
-                menuitems.appendChild(clonedLi);
+            const items = Array.from(listContainer.querySelectorAll('li'));
+            const topRow = []; // define top row
+            const bottomRow = []; // define bottom row
+
+            items.forEach((li, i) => { // for each item, place them for the bottom/top row, alternating across 7 items 
+                const clone = li.cloneNode(true);
+                if (i % 2 === 0) {
+                    topRow.push(clone);
+                } else {
+                    bottomRow.push(clone);
+                }
             });
+
+            const columns = []; // define columns
+            const maxCols = Math.ceil(items.length / 2);
+            for (let i = 0; i < maxCols; i++) { // make columns (2 down, 4 across, since I have 7 items)
+                if (topRow[i]) columns.push(topRow[i]);
+                if (bottomRow[i]) columns.push(bottomRow[i]);
+            }
+
+            columns.forEach(li => menuitems.appendChild(li)); // append to menuitems
         }
 
-        menunav.style.height = '380px'; // max height, surely no screen is under 380px
+        menunav.style.height = '380px'; // height for menu
         header.classList.remove("scrolled");
-        overlay.classList.add('active'); // show overlay effect
+        overlay.classList.add('active'); // menu active
         isMenuOpen = true; // adds open flag
 
-        navItems.forEach(nav => nav.classList.remove('selected'));
-        selectedItem.classList.add('selected');
+        navItems.forEach(nav => nav.classList.remove('selected')); // remove selected class for each item
+        selectedItem.classList.add('selected'); // add class for new item
     }
 
 
