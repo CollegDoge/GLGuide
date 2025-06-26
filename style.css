@@ -5,8 +5,8 @@
 
 /* Page colors */
 :root { /* epic video https://www.youtube.com/watch?v=_gKEUYarehE  */
-  --base-color: white;
-  --base-secondary: #f1f3f4;
+  --base-color: rgb(255, 251, 247);
+  --base-secondary: #f5f1f0;
   --base-other: rgba(220,220,220,0.25);
   --text-color: #000;
   --text-secondary: #252525;
@@ -94,6 +94,7 @@ img {
   }
   .menu .menu-items {
     font-size: 18px !important;
+    gap: 10px !important;
   }
   .content {
     flex-direction: column;
@@ -797,13 +798,19 @@ button {
   justify-content: center;
 
   height: 90px;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
   padding: 20px;
   border-radius: 10px;
   background-color: var(--base-other);
   text-align: center;
   gap: 8px;
+  cursor: pointer;
+  transition: ease-in-out 0.3s;
 }
+.menu .menu-items li:hover {
+  background-color: var(--primary-color);
+}
+
 
 /* page blur */
 #page-overlay {
