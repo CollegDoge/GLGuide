@@ -116,12 +116,12 @@ document.addEventListener("DOMContentLoaded", function () {
         const listContainer = document.querySelector(`.item-${key}`);
 
         if (listContainer) {
-            const items = Array.from(listContainer.querySelectorAll('li'));
+            const items = Array.from(listContainer.querySelectorAll('a'));
             const topRow = []; // define top row
             const bottomRow = []; // define bottom row
 
-            items.forEach((li, i) => { // for each item, place them for the bottom/top row, alternating across 7 items 
-                const clone = li.cloneNode(true);
+            items.forEach((a, i) => { // for each item, place them for the bottom/top row, alternating across 7 items 
+                const clone = a.cloneNode(true);
                 if (i % 2 === 0) {
                     topRow.push(clone);
                 } else {
