@@ -100,7 +100,7 @@ window.addEventListener("scroll", () => {
     }
 });
 
-// HEADER SCROLL + MENU
+// MENUS, NAV AND HEADER SCROLL
 document.addEventListener("DOMContentLoaded", function () {
     const header = document.querySelector("header");
     const menunav = document.getElementById('menunav');
@@ -110,6 +110,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let isMenuOpen = false;
 
     function openMenu(title, selectedItem) {
+        if (!title) return; // avoids null errors
+
         menuitems.innerHTML = "";
 
         const key = title.toLowerCase();
@@ -136,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (bottomRow[i]) columns.push(bottomRow[i]);
             }
 
-            columns.forEach(li => menuitems.appendChild(li)); // append to menuitems
+            columns.forEach(a => menuitems.appendChild(a)); // append to menuitems
         }
 
         menunav.style.height = '380px'; // height for menu
@@ -200,10 +202,10 @@ document.querySelectorAll('#fullnav .nav-item').forEach(navItem => {
     const listContainer = document.querySelector(`.item-${titleText}`); // same thing as earlier, see last section
 
     if (dropdown && listContainer) {
-        const items = listContainer.querySelectorAll('li'); // gets lists
-        items.forEach(li => {
-            const clonedLi = li.cloneNode(true);
-            dropdown.appendChild(clonedLi);
+        const items = listContainer.querySelectorAll('a'); // gets lists (now A instead of LI)
+        items.forEach(a => {
+            const clonedA = a.cloneNode(true);
+            dropdown.appendChild(clonedA);
         });
     }
 });
