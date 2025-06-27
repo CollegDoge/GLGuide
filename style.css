@@ -87,6 +87,14 @@ img {
   height: auto;
 }
 
+.temppage {
+  display: flex;
+  position: inherit;
+  padding-bottom: 1000px;
+  padding-top: 100px;
+  background-color: var(--base-secondary);
+}
+
 /* responsive */
 @media (max-width: 1200px) {
   .menu .container {
@@ -226,7 +234,7 @@ img {
   }
 }
 
-@media (max-height: 400px) {
+@media (max-height: 650px) {
   .overlaybottom {
     display: none !important;
   }
@@ -727,9 +735,13 @@ button {
   display: flex;
 }
 #fullnav .nav-item p {
+  cursor: pointer;
   margin: 10px 30px 10px 30px;
   background-color: var(--base-other);
   border-radius: 10px;
+}
+#fullnav .overlaybottom a {
+  padding: 10px;
 }
 #fullnav .nav-item a {
   margin: 8px;
