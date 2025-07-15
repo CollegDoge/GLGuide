@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://collegdoge.github.io/GeodesLinuxGuide/</loc>
+    <loc>https://collegdoge.github.io/GLGuide/</loc>
     <priority>1</priority>
   </url>
   <url>
-    <loc>https://collegdoge.github.io/GeodesLinuxGuide/quiz.html</loc>
+    <loc>https://collegdoge.github.io/GLGuide/quiz.html</loc>
   </url>
   <url>
-    <loc>https://collegdoge.github.io/GeodesLinuxGuide/suggest.html</loc>
+    <loc>https://collegdoge.github.io/GLGuide/suggest.html</loc>
   </url>
   <url>
-    <loc>https://collegdoge.github.io/GeodesLinuxGuide/pages/about.html</loc>
+    <loc>https://collegdoge.github.io/GLGuide/pages/about.html</loc>
   </url>
   <url>
-    <loc>https://collegdoge.github.io/GeodesLinuxGuide/404.html</loc>
+    <loc>https://collegdoge.github.io/GLGuide/404.html</loc>
     <priority>0</priority>
   </url>
 </urlset>

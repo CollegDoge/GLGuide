@@ -758,6 +758,7 @@ button {
   top: 22px;
   left: 18px;
   font-size: 25px;
+  cursor: pointer;
 }
 .overlay .nav-closebtn {
   position: absolute;
@@ -821,7 +822,8 @@ button {
   display: flex;
   position: fixed;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+  flex-direction: column;
   width: 100%;
   height: 0;
   top: 0;
@@ -841,7 +843,7 @@ button {
   text-align: center;
   align-items: center;
   font-size: 24px;
-  padding-top: 80px; 
+  padding-top: 50px; 
 }
 .menu .menu-items {
   display: grid;
@@ -877,6 +879,14 @@ button {
 
 .menu .menu-items .menu-button:hover {
   background-color: var(--primary-color);
+}
+.menu-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+  gap: 20px;
 }
 
 .head-title {
@@ -918,6 +928,65 @@ button {
   padding-bottom: 500px;
   gap: 24px;
   overflow: hidden;
+}
+
+.about-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 1;
+  padding-top: 140px;
+  gap: 24px;
+  overflow: hidden;
+}
+
+.about-main img {
+  position: absolute;
+  opacity: 0.8;
+  width: 50%;
+  height: auto;
+  z-index: -1;
+}
+
+.about-top, .about-middle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 1;
+  gap: 24px;
+  overflow: hidden;
+}
+.about-topcontent {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  padding: 150px;
+}
+.about-topcontent-head {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+}
+.about-toplist li {
+  font-size: 18px;
+  list-style-type: none;
+}
+.about-middlecontent {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  padding-right: 150px;
+  padding-bottom: 500px; /* temporary */
+}
+
+.h1-cross {
+  text-decoration: line-through;
+  font-weight: 300;
 }
 
 .access-main img {
