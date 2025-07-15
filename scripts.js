@@ -35,70 +35,68 @@ document.addEventListener("DOMContentLoaded", () => { // theme switching
 });
 
 
-// LAPTOP IMAGE FUN STUFF
+// LAPTOP IMAGE STUFF (HOME)
 const audio = document.getElementById("audio");
 const playButton = document.getElementById("playbtn");
 
-let clickEnabled = true;
-let originalSrc = "./img/laptop.png";
-let altSrc = "./img/bsod.png";
-let scrollSrc = "./img/laptopkde.png";
+if (audio && playButton) {
+    let clickEnabled = true;
+    let originalSrc = "./img/laptop.png";
+    let altSrc = "./img/bsod.png";
+    let scrollSrc = "./img/laptopkde.png";
 
-let imageList = [
-    "./img/laptopkde.png",
-    "./img/laptopgnome.png",
-    "./img/laptopcinnamon.png",
-];
-let currentImageIndex = 0;
+    let imageList = [
+        "./img/laptopkde.png",
+        "./img/laptopgnome.png",
+        "./img/laptopcinnamon.png",
+    ];
+    let currentImageIndex = 0;
 
-// LAPTOP BSOD BUTTON / IMAGE ROTATION
-playButton.addEventListener("click", () => {
-    if (clickEnabled) {
-        // Mode 1: Under Y 100 — toggle audio and laptop images
-        if (audio.paused) {
-            audio.play();
-            playButton.src = "./img/bsod.png";  // changes image to bsod funny
-        } else {
-            audio.pause();
-            playButton.src = "./img/laptop.png";  // back to regular img
-        }
-    } else {
-        currentImageIndex = (currentImageIndex + 1) % imageList.length;
-        playButton.src = imageList[currentImageIndex];
-    }
-});
-
-// FADE ANIMATION
-function fadeImage(imgElement, newSrc) {
-    const tempImg = new Image();
-    tempImg.src = newSrc;
-
-    tempImg.onload = () => {
-        imgElement.classList.add("fade-out");
-
-        setTimeout(() => {
-            imgElement.src = newSrc;
-            imgElement.classList.remove("fade-out");
-        }, 200);
-    };
-}
-
-function getScrollThreshold() {
-    return window.innerWidth < 1200 ? 850 : 480;
-}
-
-// IMAGE CHANGE ON SCROLL
-window.addEventListener("scroll", () => {
-    const threshold = getScrollThreshold();
-
-    if (window.scrollY > threshold) { // if window is scrolled past the windows threshold (different per screen res), change the windows image to the KDE one
+    playButton.addEventListener("click", () => {
         if (clickEnabled) {
-            clickEnabled = false;
-            audio.pause(); // stop audio if playing
-            fadeImage(playButton, scrollSrc);
+            if (audio.paused) {
+                audio.play();
+                playButton.src = "./img/bsod.png"; // changes image to bsod funny
+            } else {
+                audio.pause();
+                playButton.src = "./img/laptop.png"; // regular image
+            }
+        } else {
+            currentImageIndex = (currentImageIndex + 1) % imageList.length;
+            playButton.src = imageList[currentImageIndex];
         }
+    });
+
+    function fadeImage(imgElement, newSrc) {
+        const tempImg = new Image();
+        tempImg.src = newSrc;
+
+        tempImg.onload = () => {
+            imgElement.classList.add("fade-out");
+            setTimeout(() => {
+                imgElement.src = newSrc;
+                imgElement.classList.remove("fade-out");
+            }, 200);
+        };
     }
-});
+
+    function getScrollThreshold() {
+        return window.innerWidth < 1200 ? 850 : 480;
+    }
+
+    window.addEventListener("scroll", () => {
+        const threshold = getScrollThreshold();
+
+        if (window.scrollY > threshold) { // if window is scrolled past the windows threshold (different per screen res), change the windows image to the KDE one
+            if (clickEnabled) {
+                clickEnabled = false;
+                audio.pause(); // stop audio if playing
+                fadeImage(playButton, scrollSrc);
+            }
+        }
+    });
+}
+
 
 // MENUS, NAV AND HEADER SCROLL
 document.addEventListener("DOMContentLoaded", function () {
@@ -195,6 +193,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+
 // FULLSCREEN NAV FUNCTIONALITY
 document.querySelectorAll('#fullnav .nav-item').forEach(navItem => {
     const titleText = navItem.querySelector('p').textContent.trim().toLowerCase(); // e.g., "distros"
@@ -209,8 +208,6 @@ document.querySelectorAll('#fullnav .nav-item').forEach(navItem => {
         });
     }
 });
-
-
 document.querySelectorAll('#fullnav .nav-item').forEach(item => {
     item.addEventListener('click', () => {
         const isOpen = item.classList.contains('open'); // adds open (expanded) checking for items
@@ -238,65 +235,74 @@ function updateLogoText() {
 updateLogoText();
 window.addEventListener("resize", updateLogoText);
 
+// PARAGRAPH TEXT CHANGE (screen width < 768)
+function updateParaText() { 
+    const logoText = document.querySelector(".para-text");
+    const buttonShow = document.querySelector(".para-btn");
 
-// PARAGRAPH TEXT
-function updateParaText() {
-    const logoText = document.querySelector(".para-text"); // Parahraph text shorten
-    const buttonShow = document.querySelector(".para-btn"); // Show read more button
-    if (window.innerWidth <= 768) {
-        logoText.textContent = "Windows 10 support is ending October this year, and that's bad news for millions of devices worldwide. Once support ends, Microsoft stops giving security updates. No patches for new vulnerabilities, no fixes for bugs and exploits.";
-        buttonShow.style.position = "relative"; // adds button to show more if <768
-        buttonShow.style.left = "50%"; // dont know why i did this but i am too lazy to change it now
-        buttonShow.style.transform = "translateX(-50%)";
-        buttonShow.style.display = "block";
-    } else {
-        logoText.textContent = "Windows 10 support is ending October this year, and that's bad news for millions of devices worldwide. Once support ends, Microsoft stops giving security updates. No patches for new vulnerabilities, no fixes for bugs and exploits. In other words, your PC becomes a sitting duck for hackers and malware, and your apps will eventually just stop being supported. This will lead to millions of (frankly, not even that old) devices being thrown out when they dont need to be. Windows 11 has its problems too, with privacy concerns, unwanted features/removal of features, and many AI features being shoved down your throat.";
-        buttonShow.style.display = "none"; // removes button if screen size is >768
+    if (logoText && buttonShow) {
+        if (window.innerWidth <= 768) { 
+            logoText.textContent = "Windows 10 support is ending October this year, and that's bad news for millions of devices worldwide. Once support ends, Microsoft stops giving security updates. No patches for new vulnerabilities, no fixes for bugs and exploits.";
+            buttonShow.style.position = "relative"; // adds button to show more if <768
+            buttonShow.style.left = "50%";  // dont know why i did this but i am too lazy to change it now
+            buttonShow.style.transform = "translateX(-50%)"; 
+            buttonShow.style.display = "block";
+        } else {
+            logoText.textContent = "Windows 10 support is ending October this year, and that's bad news for millions of devices worldwide. Once support ends, Microsoft stops giving security updates. No patches for new vulnerabilities, no fixes for bugs and exploits. In other words, your PC becomes a sitting duck for hackers and malware, and your apps will eventually just stop being supported. This will lead to millions of (frankly, not even that old) devices being thrown out when they dont need to be. Windows 11 has its problems too, with privacy concerns, unwanted features/removal of features, and many AI features being shoved down your throat.";
+            buttonShow.style.display = "none"; // removes button if screen size is >768
+        }
     }
 }
-// UPDATE PARAGRAPH TEXT
+
+
+// UPDATES PARAGRAPH TEXT
 updateParaText();
 window.addEventListener("resize", updateParaText);
 
-
-// READ MORE/LESS BUTTON
+// READ MORE/LESS BUTTON (screen width < 768)
 function paraTextToggle() {
     const logoText = document.querySelector(".para-text");
     const button = document.querySelector(".para-btn");
     const icon = document.getElementById("para-icon");
     const label = document.getElementById("para-label");
-    const isExpanded = button.dataset.expanded === "true";
 
-    if (!isExpanded) { // adds this text if you press the read more button (couldve done this more efficiently but it works)
-        logoText.textContent = "Windows 10 support is ending October this year, and that's bad news for millions of devices worldwide. Once support ends, Microsoft stops giving security updates. No patches for new vulnerabilities, no fixes for bugs and exploits. In other words, your PC becomes a sitting duck for hackers and malware, and your apps will eventually just stop being supported. This will lead to millions of (frankly, not even that old) devices being thrown out when they dont need to be. Windows 11 has its problems too, with privacy concerns, unwanted features/removal of features, and many AI features being shoved down your throat.";
-        label.textContent = "Read Less"; // arrow text + icon
-        icon.className = "nf nf-fa-angle_up";
-        button.dataset.expanded = "true";
-    } else { // back to smaller ver
-        logoText.textContent = "Windows 10 support is ending October this year, and that's bad news for millions of devices worldwide. Once support ends, Microsoft stops giving security updates. No patches for new vulnerabilities, no fixes for bugs and exploits.";
-        label.textContent = "Read More"; // arrow text + icon
-        icon.className = "nf nf-fa-angle_down";
-        button.dataset.expanded = "false";
+    if (logoText && button && icon && label) { // adds this text if you press the read more button (couldve done this more efficiently but it works)
+        const isExpanded = button.dataset.expanded === "true";
+
+        if (!isExpanded) {
+            logoText.textContent = "Windows 10 support is ending October this year, and that's bad news for millions of devices worldwide. Once support ends, Microsoft stops giving security updates. No patches for new vulnerabilities, no fixes for bugs and exploits. In other words, your PC becomes a sitting duck for hackers and malware, and your apps will eventually just stop being supported. This will lead to millions of (frankly, not even that old) devices being thrown out when they dont need to be. Windows 11 has its problems too, with privacy concerns, unwanted features/removal of features, and many AI features being shoved down your throat.";
+            label.textContent = "Read Less"; // arrow text + icon
+            icon.className = "nf nf-fa-angle_up"; 
+            button.dataset.expanded = "true";
+        } else {
+            logoText.textContent = "Windows 10 support is ending October this year, and that's bad news for millions of devices worldwide. Once support ends, Microsoft stops giving security updates. No patches for new vulnerabilities, no fixes for bugs and exploits.";
+            label.textContent = "Read More"; // arrow text + icon
+            icon.className = "nf nf-fa-angle_down";
+            button.dataset.expanded = "false";
+        }
     }
 }
 
 
+
 // GRADIENT
 const section = document.querySelector('.sectionmiddle');
-const gradient = section.querySelector('.gradient');
+const gradient = section?.querySelector('.gradient');
 
-section.addEventListener('mousemove', e => {
-  const rect = section.getBoundingClientRect(); // gets section size
-  const x = e.clientX - rect.left;
-  const y = e.clientY - rect.top;
-  section.style.setProperty('--x', `${x}px`); // finds x/y of cursor
-  section.style.setProperty('--y', `${y}px`);
-  gradient.style.opacity = '0.2'; // sets gradient to 0.2, maybe too much idk
-});
+if (section && gradient) {
+    section.addEventListener('mousemove', e => { 
+        const rect = section.getBoundingClientRect(); // gets section size
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        section.style.setProperty('--x', `${x}px`); // finds x/y of cursor
+        section.style.setProperty('--y', `${y}px`);
+        gradient.style.opacity = '0.2'; // sets gradient to 0.2, maybe too much idk
+    });
 
-section.addEventListener('mouseleave', () => { // removes the gradient if mouse leaves the section
-  gradient.style.opacity = '0';
-});
+    section.addEventListener('mouseleave', () => { 
+        gradient.style.opacity = '0'; // removes the gradient if mouse leaves the section
+    });
+}
 
 
 // FULL NAVIGATION & NAV ITEM MENUS
