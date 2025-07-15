@@ -94,6 +94,9 @@ img {
   padding-top: 100px;
   background-color: var(--base-secondary);
 }
+.temppage h1 {
+  padding-left: 20px;
+}
 
 /* responsive */
 @media (max-width: 1200px) {
