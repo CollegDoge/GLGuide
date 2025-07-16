@@ -200,7 +200,7 @@ img {
   .sectionbottom {
     padding: 80px 5vw !important;
   }
-  .sectionbottom .bottom-icons {
+  .distro-icons {
     opacity: 0% !important;
   }
   .sectionbottom img {
@@ -519,41 +519,41 @@ header .hamburger {
   width: 550px;
   height: auto;
 }
-.sectionbottom .bottom-icons {
+.distro-icons {
   z-index: 0;
   opacity: 15%;
 }
-.bottom-fedora {
+.distro-fedora {
   position: absolute;
   width: 150px;
   top: 6%;
   left: 4%;
 }
-.bottom-arch {
+.distro-arch {
   position: absolute;
   width: 190px;
   bottom: 3%;
   right: 4%;
 }
-.bottom-debian {
+.distro-debian {
   position: absolute;
   width: 160px;
   top: 14%;
   left: 40%;
 }
-.bottom-mint {
+.distro-mint {
   position: absolute;
   width: 180px;
   bottom: 8%;
   left: 47%;
 }
-.bottom-bazzite {
+.distro-bazzite {
   position: absolute;
   width: 200px;
   bottom: 3%;
   left: 12%;
 }
-.bottom-popos {
+.distro-popos {
   position: absolute;
   width: 150px;
   top: 2%;
@@ -940,6 +940,36 @@ button {
   padding-top: 140px;
   gap: 24px;
   overflow: hidden;
+}
+
+.quiz-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 140px;
+}
+.quiz-top {
+  z-index: 1;
+}
+
+.quiz-content {
+  z-index: 1;
+  padding-bottom: 100px;
+}
+
+.quiz-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 20px;
+  gap: 30px;
+}
+.quiz-items img {
+  width: 500px;
 }
 
 .about-main img {
