@@ -347,3 +347,8 @@ function closePreview() { // yes im making this again for the image preview, too
     document.body.style.overflow = '';
     hideHeader.style.display = 'flex';
 }
+
+// QUIZ
+function quizMain() {
+    
+}
