@@ -350,5 +350,14 @@ function closePreview() { // yes im making this again for the image preview, too
 
 // QUIZ
 function quizMain() {
+    const quizFrame = document.querySelector('.quiz-frame');
+    const quizInitial = document.querySelector('.quiz-initial');
+    const quizQuestions = document.querySelector('.quiz-questions');
+    const quizOutcomes = document.querySelector('.quiz-outcomes');
+    const quizDefault = document.querySelector('.quiz-default');
+
+    quizDefault.style.display = 'none';
+    quizFrame.style.display = 'flex';
+    quizInitial.style.display = 'flex';
     
 }

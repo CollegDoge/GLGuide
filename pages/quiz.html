@@ -42,14 +42,34 @@
             <div class="distro-bazzite"><img src="../img/bazzite.png"></div>
             <div class="distro-popos"><img src="../img/popos.png"></div>
         </div>
-        <div class="quiz-top">
-            <h1>Distro Quiz</h1>
-            <p>Find out what Linux Distrobution will suit you best!</p>
+        <div class="quiz-default">
+            <div class="quiz-top">
+                <h1>Distro Quiz</h1>
+                <p>Find out what Linux Distrobution will suit you best!</p>
+            </div>
+            <div class="quiz-content">
+                <div class="quiz-items">
+                    <img src="../img/quizimg.png">
+                    <button class="buttonreg" onclick="quizMain()">Start The Quiz</button>
+                </div>
+            </div>
         </div>
-        <div class="quiz-content">
-            <div class="quiz-items">
-                <img src="../img/quizimg.png">
-                <button class="buttonreg" onclick="quizMain()">Start The Quiz</button>
+        <div class="quiz-frame">
+            <div class="quiz-initial">
+                <h2>What are you most familiar with?</h2>
+                <button class="quizinit1">Windows</button>
+                <button class="quizinit2">MacOS</button>
+                <button class="quizinit3">Something Else</button>
+            </div>
+            <div class="quiz-questions">
+                <h2></h2>
+                <button class="quizans1"></button>
+                <button class="quizans2"></button>
+            </div>
+            <div class="quiz-outcomes">
+                <h2>Distro Result:</h2>
+                <h2></h2>
+                <button class="quizlink"></button>
             </div>
         </div>
     </div>  
@@ -139,24 +159,24 @@
     </div>
     <div class="quiz-questions">
         <p class="w1">Do you want a Windows-like experience?</p>
-        <p class="w2">Do you like tinkering/changing things to your liking?</p> <!-- yes w1 -->
-        <p class="w3">Do you like tinkering/changing things to your liking?</p> <!-- no w1 -->
-        <p class="w4">Do you want a feature rich desktop?</p> <!-- no w2-->
+        <p class="w2">Do you like tinkering/changing things to your liking?</p> <!-- yes w1 --> <!-- y=o1 -->
+        <p class="w3">Do you like tinkering/changing things to your liking?</p> <!-- no w1 --> <!-- y=o1 -->
+        <p class="w4">Do you want a feature rich desktop?</p> <!-- no w2--> <!-- y=f3, n=f1 -->
 
-        <p class="m1">Is your personal device MacOS?</p>
-        <p class="m2">Do you like tinkering/changing things to your liking?</p> <!-- no m1 -->
-        <p class="m3">Is your Mac model newer than 2020? (AKA M Series Chip)</p> <!-- yes m1 -->
-        <p class="m4">Do you have a PC/Laptop that isnt Apple?</p> <!-- no m3 -->
-        <p class="m5">Are you patient or willing to play around to get things working?</p> <!-- no m4 -->
-        <p class="m6">Are you willing to purchace a non-apple device</p> <!-- no m5 -->
+        <p class="m1">Is your personal device MacOS?</p> 
+        <p class="m2">Do you like tinkering/changing things to your liking?</p> <!-- no m1 --> <!-- y=o1, n=f2 -->
+        <p class="m3">Is your Mac model newer than 2020? (AKA M Series Chip)</p> <!-- yes m1 --> <!-- y=m2 --> 
+        <p class="m4">Do you have a PC/Laptop that isnt Apple?</p> <!-- no m3 --> <!-- y=f2 -->
+        <p class="m5">Are you patient or willing to play around to get things working?</p> <!-- no m4 --> <!-- y=f9 -->
+        <p class="m6">Are you willing to purchace a non-apple device</p> <!-- no m5 --> <!-- y=f6, n=f5 -->
         
         <p class="s1">Have you used ChromeOS?</p>
-        <p class="s2">Do you have a Computer that ISNT a chromebook?</p> <!-- yes s1 -->
-        <p class="s3">Do you have a Computer?</p> <!-- no s1 -->
-        <p class="s4">Are you willing to tinker to get things working?</p> <!-- no s2 -->
-        <p class="s5">Are you technical, patient and willing to learn?</p> <!-- yes s4 -->
+        <p class="s2">Do you have a Computer that ISNT a chromebook?</p> <!-- yes s1 --> <!-- y=f1 -->
+        <p class="s3">Do you have a Computer?</p> <!-- no s1 --> <!-- y=f6, n=f10 -->
+        <p class="s4">Are you willing to tinker to get things working?</p> <!-- no s2 --> <!-- n=f4 -->
+        <p class="s5">Are you technical, patient and willing to learn?</p> <!-- yes s4 --> <!-- y=f7, n=f1 -->
 
-        <p class="o1">Are you technical, patient and want the most out of your device?</p> <!-- yes m2, yes w2, yes w3 -->
+        <p class="o1">Are you technical, patient and want the most out of your device?</p> <!-- yes m2, yes w2, yes w3 --> <!-- y=f7, n=f8 -->
     </div>
 
     <div class="quiz-outcomes">

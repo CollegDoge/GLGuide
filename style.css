@@ -989,6 +989,28 @@ button {
   filter: blur(5px);
 }
 
+.quiz-frame {
+  display: none; /* BY DEFAULT */
+}
+.quiz-initial {
+  display: none;
+  flex-direction: column;
+}
+.quiz-questions {
+  display: none; /* BY DEFAULT */
+}
+.quiz-outcomes {
+  display: none; /* BY DEFAULT */
+}
+.quiz-frame button {
+  font-size: 18px;
+  padding: 10px 20px;
+  margin: 10px;
+  background: var(--primary-color);
+  color: var(--text-color);
+  text-align: center;
+}
+
 .about-main img {
   position: absolute;
   opacity: 0.8;
