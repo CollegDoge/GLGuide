@@ -992,15 +992,17 @@ button {
 .quiz-frame {
   display: none; /* BY DEFAULT */
 }
-.quiz-initial {
+.quiz-start {
   display: none;
   flex-direction: column;
 }
-.quiz-questions {
+.quiz-selection {
   display: none; /* BY DEFAULT */
+  flex-direction: column;
 }
 .quiz-outcomes {
   display: none; /* BY DEFAULT */
+  flex-direction: column;
 }
 .quiz-frame button {
   font-size: 18px;
@@ -1009,6 +1011,11 @@ button {
   background: var(--primary-color);
   color: var(--text-color);
   text-align: center;
+  z-index: 1;
+}
+.quiz-frame button:hover {
+  background: var(--primary-other);
+  color: var(--base-color);
 }
 
 .about-main img {
