@@ -241,6 +241,16 @@ img {
   .head-responsive {
     display: flex !important;
   }
+  .quiz-answers { 
+    flex-direction: column !important;
+    padding-top: 20px;
+  }
+  .quiz-answers button {
+    margin: 6px !important;
+  }
+  .quiz-items img {
+    width: 80% !important;
+  }
 }
 
 /* if your screen is the size of an ant */
@@ -255,6 +265,9 @@ img {
   .buttonsec {
     font-size: 12px !important;
     padding: 12px 24px 12px 24px !important;
+  }
+  .quiz-answers .buttonsec {
+    font-size: 16px !important;
   }
   .sectionmiddle p {
     font-size: 13px !important;
@@ -1007,6 +1020,12 @@ button {
 .quiz-outcomes {
   display: none; /* BY DEFAULT */
   flex-direction: column;
+}
+.quiz-answers {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 .quiz-frame button {
   font-size: 18px;
