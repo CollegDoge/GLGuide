@@ -1021,6 +1021,9 @@ button {
   display: none; /* BY DEFAULT */
   flex-direction: column;
 }
+.quiz-outcomes h2 {
+  margin-bottom: 30px;
+}
 .quiz-answers {
   display: flex;
   flex-direction: row;

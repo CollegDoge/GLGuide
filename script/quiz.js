@@ -26,7 +26,7 @@ const quizTree = {
     // other (e.g chromeos) branch
     s1: { question: "Have you used ChromeOS?", answers: [{ text: "Yes", next: "s2" }, { text: "No",  next: "s3" }] },
     s2: { question: "Do you have a computer that ISN’T a Chromebook?", answers: [{ text: "Yes", outcome: "f1" }, { text: "No",  next: "s4" }] },
-    s3: { question: "Do you have a computer?", answers: [{ text: "Yes", next: "s4" }, { text: "No",  outcome: "f10" }] },
+    s3: { question: "Do you have a computer?", answers: [{ text: "Yes", outcome: "f10" }, { text: "No",  outcome: "f6" }] },
     s4: { question: "Are you willing to tinker to get things working?", answers: [{ text: "Yes", next: "s5" }, { text: "No",  outcome: "f4" }] },
     s5: { question: "Are you technical, patient and willing to learn?", answers: [{ text: "Yes", outcome: "f7" }, { text: "No",  outcome: "f1" }] },
 
