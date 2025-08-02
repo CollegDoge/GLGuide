@@ -318,6 +318,7 @@ function closeNav() {
     document.getElementById("fullnav").style.height = "0%"; // disappear
 }
 
+// IMAGE PREVIEW 
 function imagePreview(src, description, link) {
     const overlay = document.getElementById('page-overlay');
     const modal = document.getElementById('image-preview');

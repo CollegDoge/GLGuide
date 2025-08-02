@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About GLG</title>
+    <link rel="icon" type="image/x-icon" href="../../img/icon.png">
+    <link href="../../style.css" rel="stylesheet" type="text/css">
+    <script src="../../scripts.js" defer type="text/javascript" ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="header-left">
+            <a href="../../"><img src="../../img/logo.png"></a>
+            <a href="../../"><h2 class="logo-text">Geodes Linux Guide</h2></a> <!-- Text will be replaced by script -->
+        </div>
+        <div class="header-right">
+            <nav class="nav">
+                <div class="nav-item" data-menu="Distros"><p class="nf-dev-archlinux"> Distros</p></div>
+                <div class="nav-item" data-menu="Topics"><p class="nf-dev-linux"> Topics</p></div>
+                <div class="nav-item" data-menu="Guides"><p class="nf-fa-screwdriver_wrench"> Guides</p></div>
+            </nav>
+            <button id="themeswitch">
+                <p class="nf-oct-moon"></p>
+                <p class="nf-md-white_balance_sunny"></p>
+            </button>
+            <div class="hamburger" onclick="openNav()"><p class="nf-fa-bars"></p></div>
+        </div>
+    </header>
+
+    <div class="temppage">
+        <h1>Page Unfinished - Come back soon!</h1>
+    </div>  
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-title">
+                    <h2>Geodes Linux Guide</h2>
+                    <p>&copy; 2025 - Geodes Crappy Web Designs</p>
+                </div>
+                <div class="footer-access">
+                    <a href="../accessibility.html" class="nf-fa-universal_access"></a>
+                </div>
+            </div>
+            <div class="footer-social">
+                <a class="nf-fa-twitter" href="https://x.com/GeodeArc"></a>
+                <a class="nf-fa-youtube" href="https://youtube.com/@GeodeArc"></a>
+                <a class="nf-md-source_repository" href="https://github.com/CollegDoge/GeodesLinuxGuide"></a>
+                <a class="nf-fa-github" href="https://github.com/GeodeArc"></a>
+            </div>
+            <div class="footer-right">
+                <div class="footer-links">
+                    <a href="../about.html">About</a>
+                    <a href="../suggest.html">Suggest Changes</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="fullnav" class="overlay">
+        <b class="nav-title" onclick="location.href='../../'">GLG</b>
+        <a href="javascript:void(0)" class="nav-closebtn" onclick="closeNav()">&times;</a>
+        <div class="navcontent">
+            <div class="nav-item"><p class="nf-dev-archlinux"> Distros</p>
+                <div class="dropdown">
+                </div>
+            </div>
+            <div class="nav-item"><p class="nf-dev-linux"> Topics</p>
+                <div class="dropdown">
+                </div>
+            </div>
+            <div class="nav-item"><p class="nf-fa-screwdriver_wrench"> Guides</p>
+                <div class="dropdown">
+                </div>
+            </div>
+        </div>
+        <div class="overlaybottom">
+            <a href="../about.html">About</a>
+            <a href="../suggest.html">Suggest Changes</a> 
+            <a href="../quiz.html">Distro Quiz</a> 
+        </div>
+    </div>
+    <div id="menunav" class="menu">
+        <div class="menucontent container">
+            <div class="menu-items"></div>
+        </div>
+        <div class="menu-bottom">
+            <a href="../about.html">About</a>
+            <a href="../suggest.html">Suggest Changes</a> 
+            <a href="../quiz.html">Distro Quiz</a> 
+        </div>
+    </div>
+    
+    <div id="page-overlay"></div>
+    
+    <div id="image-preview">
+        <div class="preview-content">
+            <img id="preview-img" src="" onclick="" alt="Preview" />
+            <div class="preview-text">
+                <span id="preview-desc"></span>
+                <a id="preview-link" href="#"></a>
+            </div>
+        </div>
+    </div>
+    <div class="nav-items" style="display: none;">
+        <div class="item-distros">
+            <a href="../distros/linuxmint.html" class="menu-button nf-md-linux_mint"> Linux Mint</a>
+            <a href="../distros/gaming.html" class="menu-button nf-linux-nobara"> Gaming Distros</a>
+            <a href="../distros/fedora.html" class="menu-button nf-dev-fedora"> Fedora</a>
+            <a href="../distros/archlinux.html" class="menu-button nf-dev-archlinux"> Arch</a>
+            <a href="../distros/ubuntu.html" class="menu-button nf-md-ubuntu"> Ubuntu</a>
+            <a href="../distros/debian.html" class="menu-button nf-dev-debian"> Debian</a>
+            <a href="../distros/others.html" class="menu-button nf-dev-linux"> Others</a>
+        </div>
+        <div class="item-topics">
+            <a href="../topics/whatislinux.html" class="menu-button nf-md-linux"> What is Linux?</a>
+            <a href="../topics/linuxjargon.html" class="menu-button nf-md-chat_question"> Linux Jargon</a>
+            <a href="../topics/desandwms.html" class="menu-button nf-cod-multiple_windows"> Desktops and WMs</a>
+            <a href="../topics/linuxsoftware.html" class="menu-button nf-fa-store"> Linux Software/FOSS</a>
+            <a href="../topics/linuxgaming.html" class="menu-button nf-md-google_controller"> Gaming On Linux</a>
+            <a href="../topics/linuxissues.html" class="menu-button nf-fa-warning"> Issues with Linux</a>
+            <a href="../topics/gtkandqt.html" class="menu-button nf-linux-gtk"> GTK and QT</a>
+        </div>
+        <div class="item-guides">
+            <a href="../guides/gettingstarted.html" class="menu-button nf-fa-star"> Getting Started with Linux</a>
+            <a href="../guides/usefulinfo.html" class="menu-button nf-fa-circle_info"> Useful Information</a>
+            <a href="../guides/partitioning.html" class="menu-button nf-md-tape_drive"> Partitioning & Dualboot</a>
+            <a href="../guides/commonissues.html" class="menu-button nf-fae-tools"> Common Issues & Fixes</a>
+            <a href="../guides/readingwikis.html" class="menu-button nf-md-file_document"> How to read Wikis</a>
+            <a href="../guides/troubleshooting.html" class="menu-button nf-md-auto_fix"> How to Troubleshoot</a>
+            <a href="../guides/appguides.html" class="menu-button nf-md-apps_box"> Specific Apps/Guides</a>
+        </div>
+    </div>
+</body>

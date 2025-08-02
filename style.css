@@ -84,6 +84,11 @@ img {
   color: var(--link-color);
   text-decoration: underline;
 }
+.h1-cross {
+  text-decoration: line-through;
+  font-weight: 300;
+  color: var(--text-secondary)
+}
 .boldtext {
   font-weight: bold;
 }
@@ -766,6 +771,17 @@ button {
   background: var(--primary-other);
   color: var(--base-color);
 }
+.button-section {
+  color: var(--text-color);
+  font-size: 18px;
+  font-weight: light;
+  border-radius: 0px;
+}
+.button-section.active {
+  font-weight: bold;
+  border-bottom: 3px solid var(--text-secondary);
+}
+
 .para-btn {
   font-family: Inter, NerdFontsSymbols Nerd Font, Arial, sans-serif;
   font-size: 14px;
@@ -1159,12 +1175,6 @@ button {
 
 }
 
-.h1-cross {
-  text-decoration: line-through;
-  font-weight: 300;
-  color: var(--text-secondary)
-}
-
 .access-main img {
   position: absolute;
   opacity: 0.8;
@@ -1172,7 +1182,6 @@ button {
   height: auto;
   z-index: -1;
 }
-
 .access-main p {
   max-width: 800px;
   font-size: 18px;
@@ -1184,6 +1193,7 @@ button {
   justify-content: center;
   gap: 200px;
 }
+
 .suggest-main {
   display: flex;
   flex-direction: column;
@@ -1194,6 +1204,33 @@ button {
   padding: 100px 20px;
   gap: 24px;
   overflow: hidden;
+}
+.suggest-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 1;
+  gap: 20px;
+  padding: 50px 20px;
+  background-color: var(--base-secondary);
+}
+.suggest-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 20px
+}
+.suggest-text {
+  max-width: 650px;
+}
+.suggest-img img {
+  max-width: 650px;
+  border: 2px solid var(--accent-color);
+  border-radius: 10px;
 }
 
 /* page blur */
