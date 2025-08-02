@@ -78,10 +78,11 @@ if (audio && playButton) {
                 imgElement.classList.remove("fade-out");
             }, 200);
         };
+        imgElement.style.cursor = "pointer"; // add clickable hint
     }
 
     function getScrollThreshold() {
-        return window.innerWidth < 1200 ? 850 : 480;
+        return window.innerWidth < 1200 ? 800 : 400;
     }
 
     window.addEventListener("scroll", () => {
@@ -346,4 +347,47 @@ function closePreview() { // yes im making this again for the image preview, too
     document.getElementById('image-preview').classList.remove('active');
     document.body.style.overflow = '';
     hideHeader.style.display = 'flex';
+}
+
+// create random quote
+const quote = document.querySelector('.randomquote');
+if (quote) {
+    const quotes = [
+        "whats the point of a backend fr",
+        "why wouldnt you just use netbeans",
+        "i lost the game, and you did too",
+        "i forgot what to write here",
+        "i use arch btw",
+        "thinkpads are goated",
+        "windows? more like trashdows",
+        "CSS is, well certainly something",
+        "whats the point of life without a computer",
+        "vaxry fix my bug already",
+        "how do i exit vim",
+        "i am a full stack developer (html, css, js, uhh bash script too)",
+        "one day i will be happy",
+        "furry art gets me through the day",
+        "ignore my last quote i beg you",
+        "dont even look at the code for this",
+        "these are random quotes btw",
+        "what am i doing, like seriously",
+        "i am fueled by the desire to learn (and maybe monster sometimes)",
+        "i hate you finn, you know what you did",
+        "i have nightmares of using macos",
+        "chatgpt, how do i center a div",
+        "i have friends, of course i do",
+        "im not angry, im just mad",
+        "the stickers on my laptop increase my productivity i swear",
+        "FF7700 is the best color, dont argue with me",
+        "overwhelmed as one would be, placed in my position",
+        "yesterday i woke up sucking a lemon",
+        "mmmghghfhfhfhffhhh",
+        "my pc specs: i5 13500, 32gb ram, 2x 1tb nvme, rx 6600xt",
+        "i get all the women",
+        "stop refreshing the page and do something productive",
+        "libass is the best package",
+        "cheaper things are generally more expensive"
+    ];
+    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+    quote.textContent = randomQuote;
 }
