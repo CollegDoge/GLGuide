@@ -391,3 +391,88 @@ if (quote) {
     const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
     quote.textContent = randomQuote;
 }
+
+// HIGH CONTRAST MODE
+function applyHighContrast(enabled) {
+    const body = document.body;
+    const btn = document.getElementById("highcontrastbtn");
+    const themeToggle = document.getElementById("themeswitch");
+    const section = document.querySelector('.sectionmiddle');
+    const gradient = section?.querySelector('.gradient');
+    const grid = document.querySelector('.background-grid');
+
+    if (enabled) {
+        // enable high contrast
+        body.classList.remove("darkmode");
+        body.classList.add("highcontrast");
+        localStorage.setItem("highcontrast", "true");
+
+        if (themeToggle) themeToggle.disabled = true;
+
+        if (section && gradient) {
+            gradient.style.opacity = '0';
+            grid.style.opacity = '0';
+            section.replaceWith(section.cloneNode(true));
+        }
+
+        document.querySelectorAll("svg, img[src$='.svg'], object[type='image/svg+xml']")
+            .forEach(el => el.style.display = "none");
+
+        if (btn) btn.textContent = "Disable High Contrast";
+    } else {
+        // disable high contrast
+        body.classList.remove("highcontrast");
+        localStorage.removeItem("highcontrast");
+
+        if (themeToggle) themeToggle.disabled = false;
+
+        document.querySelectorAll("svg, img[src$='.svg'], object[type='image/svg+xml']")
+            .forEach(el => el.style.display = "");
+
+        const savedTheme = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+        if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+            body.classList.add("darkmode");
+        }
+
+        if (btn) btn.textContent = "Enable High Contrast";
+    }
+}
+
+function highContrastToggle() {
+    const currentlyEnabled = localStorage.getItem("highcontrast") === "true";
+    applyHighContrast(!currentlyEnabled);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const shouldEnable = localStorage.getItem("highcontrast") === "true";
+    applyHighContrast(shouldEnable);
+});
+
+
+// LARGE FONT
+function applyLargeText(enabled) {
+    const body = document.body;
+    const btn = document.getElementById("largetextbtn");
+
+    if (enabled) {
+        body.classList.add("largetext");
+        localStorage.setItem("largetext", "true");
+        if (btn) btn.textContent = "Disable Large Text";
+    } else {
+        body.classList.remove("largetext");
+        localStorage.removeItem("largetext");
+        if (btn) btn.textContent = "Enable Large Text";
+    }
+}
+
+function largeTextToggle() {
+    const enabled = localStorage.getItem("largetext") === "true";
+    applyLargeText(!enabled);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const enabled = localStorage.getItem("largetext") === "true";
+    applyLargeText(enabled);
+});
