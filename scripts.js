@@ -354,7 +354,6 @@ function closePreview() { // yes im making this again for the image preview, too
 const quote = document.querySelector('.randomquote');
 if (quote) {
     const quotes = [
-        "whats the point of a backend fr",
         "why wouldnt you just use netbeans",
         "i lost the game, and you did too",
         "i forgot what to write here",
@@ -362,13 +361,10 @@ if (quote) {
         "thinkpads are goated",
         "windows? more like trashdows",
         "CSS is, well certainly something",
-        "whats the point of life without a computer",
         "vaxry fix my bug already",
         "how do i exit vim",
         "i am a full stack developer (html, css, js, uhh bash script too)",
         "one day i will be happy",
-        "furry art gets me through the day",
-        "ignore my last quote i beg you",
         "dont even look at the code for this",
         "these are random quotes btw",
         "what am i doing, like seriously",
@@ -386,8 +382,14 @@ if (quote) {
         "my pc specs: i5 13500, 32gb ram, 2x 1tb nvme, rx 6600xt",
         "i get all the women",
         "stop refreshing the page and do something productive",
-        "libass is the best package",
-        "cheaper things are generally more expensive"
+        "'libass' is the best package",
+        "cheaper things are generally more expensive",
+        "⧫︎♓︎❍︎♏︎⬧︎ ◆︎◻︎",
+        "mangoes are delicious, if you disagree you are lying to yourself",
+        "a rubber room? i dont think so",
+        "i have a tape measure next to my bed so i can measure how long i sleep",
+        "i am a certified AWS Security Engineer (real)",
+        "hideo kojima has done it again"
     ];
     const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
     quote.textContent = randomQuote;
