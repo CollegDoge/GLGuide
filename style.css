@@ -1267,7 +1267,7 @@ button {
 }
 
 
-.topic-main {
+.topic-main, .distro-main, .guide-main {
   display: flex;
   flex-direction: column;
   z-index: 1;
@@ -1275,7 +1275,7 @@ button {
   gap: 24px;
   overflow: hidden;
 }
-.topic-head {
+.topic-head, .distro-head, .guide-head {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -1283,7 +1283,7 @@ button {
   text-align: center;
   padding: 50px;
 }     
-.topic-head a {
+.topic-head a, .distro-head a, .guide-head a {
   padding: 10px 20px;
   border-radius: 10px;
   background-color: var(--primary-color);
@@ -1292,7 +1292,7 @@ button {
   cursor: pointer;
   transition: ease-in-out 0.2s;
 }
-.topic-head a:hover {
+.topic-head a:hover, .distro-head a:hover, .guide-head a:hover {
   background-color: var(--primary-other);
   color: var(--base-color);
 }
