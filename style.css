@@ -1266,6 +1266,66 @@ button {
   border-radius: 10px;
 }
 
+
+.topic-main {
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  padding: 100px 20px;
+  gap: 24px;
+  overflow: hidden;
+}
+.topic-head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  padding: 50px;
+}     
+.topic-head a {
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  font-size: 16px;
+  cursor: pointer;
+  transition: ease-in-out 0.2s;
+}
+.topic-head a:hover {
+  background-color: var(--primary-other);
+  color: var(--base-color);
+}
+.topic-content {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 0;
+}
+.topic-content img {
+  max-width: 800px;
+  height: auto;
+  border-radius: 10px;
+}
+.topic-section-left {
+  padding: 50px;
+  border-radius: 20px;
+  text-align: left;
+  background-color: var(--base-secondary);
+}
+.topic-section-right {
+  padding: 50px;
+  border-radius: 20px;
+  text-align: right;
+  background-color: var(--base-secondary);
+}
+.topic-section-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px;
+}
+
 /* page blur */
 #page-overlay {
   position: fixed;
