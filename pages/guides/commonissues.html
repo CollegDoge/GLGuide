@@ -65,7 +65,7 @@
                     </div>
                     <div class="issue">
                         <h3>Some of my apps are pixelated/blurry on my display.</h3>
-                        <p>The most likely cause of this is from XWayland applications running under wayland. If you have a display fractionally scaled (e.g 1.5x scaling. 1.25x scaling etc), and an app that is using XWayland (think electron apps such as discord, spotify, and other apps like steam and vscode)</p>
+                        <p>The most likely cause of this is from XWayland applications running under wayland. If you have a display fractionally scaled (e.g 1.5x scaling. 1.25x scaling etc), and an app that is using XWayland (think electron apps such as discord, spotify, and other apps like steam and vscode), this is probably the culprit.</p>
                         <p>You can fix this in most cases by adding this flag to the applications .desktop file trailing the exec section:</p>
                         <div class="terminal-copy"><p>exec=APPNAME --enable-features=UseOzonePlatform --ozone-platform=wayland</p><a class="nf-oct-copy"></a></div>
                         <i>(/usr/share/applications/abcd.desktop or ~/.local/share/applications/efgh.desktop)</i>
@@ -75,10 +75,11 @@
                         <h3>I can't run scripts or .AppImage files I downloaded.</h3>
                         <p>They're likely not marked as executable. Try running this in a terminal (replace filename with the path to the file)</p>
                         <div class="terminal-copy"><p>chmod +x filename</p><a class="nf-oct-copy"></a></div>
+                        <i>(primarily for .sh files, .AppImage files, and other executeables)</i>
                         <p>You can also do this in most GUI file managers if they don't prompt you already. E.g, in Nautilus, right click, select Properties, and enable the “Executeable as Program” toggle. </p>
                     </div>
                     <div class="issue">
-                        <h3>My games aren't running well, my screen is stuck at low resolution, my external monitor isn’t detected etc.</h3>
+                        <h3>My games aren't running well, my screen is stuck at low resolution, my external monitor isn't detected etc.</h3>
                         <p>If you are on intel/AMD, drivers typically work out of the box, so try updating your system.</p>
                         <p>If you are on NVIDIA, you may be using the wrong driver. Ensure you are using the proprietary NVIDIA drivers, as these will work significantly better than the open source (usually default) driver (aka Nouveau). Installing these drivers is a different process for each distro, so make sure to look it up online. </p>
                         <p>Another big possibility is that if you have newer hardware, distributions such as Linux Mint/Ubuntu may not behave well due to the slower release of new kernels/drivers. Try a distro like Fedora, and see if that resolves your issue.</p>
