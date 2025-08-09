@@ -339,11 +339,25 @@ img {
     flex-direction: column !important;
     gap: 40px !important;
   }
-  .section-left, .section-right {
+  .section-left, .section-right, .section-center {
     padding: 50px 20px !important;
+  }
+  .section-left {
+    padding-bottom: 10px !important;
+  }
+  .section-right {
+    padding-top: 10px !important;
   }
   .content-grid-left, .content-grid-right {
     width: 100% !important;
+  }
+  .section-info { 
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+  .section-bottom {
+    flex-direction: column !important;
+    gap: 20px !important;
   }
 }
 
@@ -1477,6 +1491,7 @@ button {
   font-size: 16px;
   cursor: pointer;
   transition: ease-in-out 0.2s;
+  text-decoration: none;
 }
 .section-bottom a:hover {
   background-color: var(--primary-other);
@@ -1496,16 +1511,123 @@ button {
   padding: 10px 20px;
 }
 .section-info .dist-type h3 { /* e.g arch, debian based, ubuntu based, etc. */
-  background: linear-gradient(to right, red, #ff7700);
+  background: var(--accent-color);
   border-radius: 10px;
 }
 .section-info .dist-schd h3 { /* rolling release, stable, etc */
-  background: linear-gradient(to right, green, #00da00);
+  background: var(--accent-secondary);
   border-radius: 10px;
 }
 .section-info .dist-skill h3 { /* beginner, intermediate etc */
-  background: linear-gradient(to right, blue, #2f00ff);
+  background: var(--accent-color);
   border-radius: 10px;
+}
+
+.other-container {
+  display: flex;
+  flex-direction: column;
+}
+.other-container button {
+  font-size: 16px;
+  margin-top: 20px;
+  background-color: #ff5100;
+  color: #fff;
+}
+.other-container button:hover {
+  background-color: #202020;
+  color: #fff;
+}
+.bazzite, .nobara, .pikaos {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 50px;
+  gap: 50px;
+}
+.bazzite {
+  background-color: rgba(40, 10, 104, 0.3);
+}
+.nobara {
+  background-color: rgba(11, 44, 116, 0.3);
+}
+.pikaos {
+  background-color: rgba(115, 97, 9, 0.3);
+}
+.bazzite-left, .nobara-left, .pikaos-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 600px;
+}
+.bazzite-right, .nobara-right, .pikaos-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 600px;
+}
+.game-others {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 50px;
+}
+.game-others-row {
+  display: flex;
+  flex-direction: row;
+}
+.game-other {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.arch-title, .ubuntu-title, .minim-title, .immuteable-title, .others-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.archbased, .ubuntubased, .minimal, .immuteable, .otherdistros {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 50px;
+}
+.archbased, .arch-title {
+  background-color: var(--base-secondary);
+}
+.ubuntubased, .ubuntu-title {
+  background-color: var(--base-other);
+}
+.minimal, .minim-title {
+  background-color: var(--base-primary);
+}
+.immuteable, .immuteable-title {
+  background-color: var(--base-other);
+}
+.otherdistros, .others-title {
+  background-color: var(--base-secondary);
+}
+
+.other-distro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  gap: 20px;
 }
 
 /* page blur */
