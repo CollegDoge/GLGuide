@@ -216,6 +216,10 @@ img {
     padding: 10px !important;
     gap: 20px !important;
   }
+  .desktopwm-row {
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
 }
 
 /* responsive but smaller screen */
@@ -330,6 +334,13 @@ img {
   .about-ls-list {
     flex-direction: column !important;
     gap: 10px !important;
+  }
+  .section-head {
+    flex-direction: column !important;
+    gap: 40px !important;
+  }
+  .section-left, .section-right {
+    padding: 50px 20px !important;
   }
   .content-grid-left, .content-grid-right {
     width: 100% !important;
