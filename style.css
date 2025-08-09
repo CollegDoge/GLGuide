@@ -1267,25 +1267,27 @@ button {
 }
 
 
-.topic-main, .distro-main, .guide-main {
+.section-main {
   display: flex;
   flex-direction: column;
   z-index: 1;
-  padding: 100px 20px;
+  padding-top: 100px;
   gap: 24px;
   overflow: hidden;
 }
-.topic-head, .distro-head, .guide-head {
+.section-main li {
+  list-style-type: none;
+}
+.section-head {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   text-align: center;
-  background-color: var(--base-other);
   border-radius: 20px;
   padding: 50px;
 }     
-.topic-head a, .distro-head a, .guide-head a {
+.section-head a {
   padding: 10px 20px;
   border-radius: 10px;
   background-color: var(--primary-color);
@@ -1294,49 +1296,131 @@ button {
   cursor: pointer;
   transition: ease-in-out 0.2s;
 }
-.topic-head a:hover, .distro-head a:hover, .guide-head a:hover {
+.section-head a:hover {
   background-color: var(--primary-other);
   color: var(--base-color);
 }
-.topic-content, .distro-content, .guide-content {
+.section-content {
   display: flex;
   flex-direction: column;
   padding: 50px 0;
 }
-.topic-content img, .distro-content img, .guide-content img {
-  max-width: 800px;
+.section-content a {
+  color: var(--link-color);
+  text-decoration: underline;
+ }
+.section-content img {
+  max-width: 600px;
   height: auto;
   border-radius: 10px;
 }
-.topic-section-left, .distro-section-left, .guide-section-left {
-  padding: 50px;
-  border-radius: 20px;
+.section-left {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 5vw;
   text-align: left;
   background-color: var(--base-secondary);
 }
-.topic-section-right, .distro-section-right, .guide-section-right {
-  padding: 50px;
-  border-radius: 20px;
+.section-left-text {
+  width: 600px;
+  padding-right: 50px;
+}
+.section-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 5vw;
   text-align: right;
   background-color: var(--base-secondary);
 }
-.topic-section-center, .distro-section-center, .guide-section-center {
+.section-right-text {
+  width: 600px;
+  padding-left: 50px;
+}
+.section-center {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  padding: 100px;
+  align-items: center;
+  text-align: center;
+  padding: 50px;
+  gap: 30px;
+}
+.section-center p {
+  max-width: 800px;
+}
+.section-center img {
+  margin-top: 30px;
+}
+.content-grid {
+  display: grid; /* the only time i swear */
+  grid-template-columns: 1fr 1fr; 
+  gap: 50px;
+  padding: 50px;
+}
+.content-grid-left {
+  width: 500px;
+  text-align: center;
+}
+.content-grid-right {
+  width: 500px;
+  text-align: center; 
 }
 .jargon-row {
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
-.jargon-row b {
-  padding-top: 20px;
+.jargon-row h3 {
+  font-size: 20px;
+  padding-top: 40px;
 }
-
-.distro-bottom {
+.desktopwm-row {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+.issue-container {
+  display: flex;
+  flex-direction: column;
+}
+.issue-container .issue {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+.issue-container .issue h3 {
+  font-size: 20px;
+  padding-top: 40px;
+  max-width: 800px;
+}
+.issue-container .issue i {
+  margin-bottom: 20px;
+}
+.terminal-copy {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin: 10px;
+  background-color: var(--base-other);
+  border-radius: 10px;
+}
+.terminal-copy a {
+  color: var(--text-color);
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 10px;
+  padding-left: 20px;
+}
+.section-bottom {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -1345,7 +1429,7 @@ button {
   gap: 30px;
   background-color: var(--base-secondary);
 }
-.distro-bottom a {
+.section-bottom a {
   padding: 10px 20px;
   border-radius: 10px;
   background-color: var(--primary-color);
@@ -1354,12 +1438,12 @@ button {
   cursor: pointer;
   transition: ease-in-out 0.2s;
 }
-.distro-bottom a:hover {
+.section-bottom a:hover {
   background-color: var(--primary-other);
   color: var(--base-color);
 }
 
-.distro-info {
+.section-info {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -1367,19 +1451,19 @@ button {
   text-align: center;
   gap: 80px;
 }
-.distro-info h3 {
+.section-info h3 {
   font-size: 24px;
   padding: 10px 20px;
 }
-.distro-info .distro-type h3 { /* e.g arch, debian based, ubuntu based, etc. */
+.section-info .dist-type h3 { /* e.g arch, debian based, ubuntu based, etc. */
   background: linear-gradient(to right, red, #ff7700);
   border-radius: 10px;
 }
-.distro-info .distro-schd h3 { /* rolling release, stable, etc */
+.section-info .dist-schd h3 { /* rolling release, stable, etc */
   background: linear-gradient(to right, green, #00da00);
   border-radius: 10px;
 }
-.distro-info .distro-skill h3 { /* beginner, intermediate etc */
+.section-info .dist-skill h3 { /* beginner, intermediate etc */
   background: linear-gradient(to right, blue, #2f00ff);
   border-radius: 10px;
 }
