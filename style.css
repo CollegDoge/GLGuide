@@ -220,6 +220,12 @@ img {
     flex-direction: column !important;
     gap: 20px !important;
   }
+  .bazzite, .nobara, .pikaos {
+    flex-direction: column !important;
+  }
+  .archbased, .ubuntubased, .minimal, .immuteable, .otherdistros {
+    flex-direction: column !important;
+  }
 }
 
 /* responsive but smaller screen */
@@ -358,6 +364,9 @@ img {
   .section-bottom {
     flex-direction: column !important;
     gap: 20px !important;
+  }
+  .game-others-row {
+    flex-direction: column !important;
   }
 }
 
@@ -1534,7 +1543,7 @@ button {
   color: #fff;
 }
 .other-container button:hover {
-  background-color: #202020;
+  background-color: #4b4b4b;
   color: #fff;
 }
 .bazzite, .nobara, .pikaos {
@@ -1588,21 +1597,17 @@ button {
   flex-direction: column;
   padding: 20px;
 }
-
 .arch-title, .ubuntu-title, .minim-title, .immuteable-title, .others-title {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
   padding: 20px;
 }
-
 .archbased, .ubuntubased, .minimal, .immuteable, .otherdistros {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 50px;
+  gap: 10px;
 }
 .archbased, .arch-title {
   background-color: var(--base-secondary);
@@ -1619,15 +1624,15 @@ button {
 .otherdistros, .others-title {
   background-color: var(--base-secondary);
 }
-
 .other-distro {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 20px;
-  gap: 20px;
+  gap: 10px;
+  padding: 10px 0;
+  margin: 20px;
 }
 
 /* page blur */
