@@ -42,27 +42,128 @@
         <div class="section-content">
             <div class="section-left">
                 <div class="section-left-text">
-                    <h2>What is Partitioning?</h2>
-                    <p>aaaaaaaaaaa</p>
+                    <h2>What are partitions/partitioning?</h2>
+                    <p>Partitions are essentially divisions of a physical storage drive, like a hard disk or a solid-state drive (SSD). Think of your hard drive as a filing cabinet; partitioning is the process of putting dividers in that cabinet to create separate drawers. Each drawer, or partition, can be treated as an independent storage space. This means you can have different file systems on each partition, and they can be used to hold separate operating systems, personal files, or backups. The process of dividing the disk into these sections is called partitioning. It is a fundamental concept for managing storage on a computer. For example, your Windows installation probably uses at least two partitions: one for the operating system and another for recovery data. Partitioning is necessary for installing any operating system and is particularly important for tasks like dual-booting.</p>
                 </div>
-                <img src="../../img/pages/">
+                <img src="../../img/pages/g-pt1.jpg">
             </div>
             <div class="section-right">
-                <img src="../../img/pages/">
+                <img src="../../img/pages/g-pt2.jpg">
                 <div class="section-right-text">
                     <h2>Should I dualboot, and what should I know?</h2>
-                    <p>aaaaaaaaaaa</p>
+                    <p>Dual-booting is the act of installing two or more operating systems on the same computer, each on its own partition. When you start your computer, you get to choose which operating system you want to load. This is a great option for people who want to try Linux without fully committing to it. It allows you to keep Windows for specific applications you can't run on Linux (like Adobe software or certain games) while you explore the new OS. However, dual-booting requires careful planning. You need to ensure you have enough free space on your hard drive to create a new partition for Linux, and you'll need to use a partitioning tool to set this up. While it's generally safe, it's a good idea to back up all your important data beforehand to prevent any loss. It's a great middle-ground for anyone who is unsure about making a full switch.</p>
                 </div>
             </div>
             <div class="section-center">
                 <h2>Partitioning through Windows</h2>
-                <p>aaaaaaaaaaa</p>
-                <img src="../../img/pages/">
+                <p>If you are currently on Windows, you can use the built-in Disk Management tool to prepare your drive for a Linux installation. To access this, simply search for "Create and format hard disk partitions" in the Start Menu. In this tool, you can see all your current partitions. You can then shrink your main Windows partition to free up some unallocated space. It's in this unallocated space that you will later install Linux. Make sure you leave enough space for your Linux distro and any files you plan to store there.</p>
+                <img src="../../img/pages/g-pt3.jpg">
             </div>
             <div class="section-center">
                 <h2>Partitioning through Linux</h2>
-                <p>aaaaaaaaaaa</p>
-                <img src="../../img/pages/">
+                <p>When you run the Linux installer from your live USB, it will give you options for how to handle partitioning. The installer will often have a "side-by-side" or "install alongside Windows" option that automates the partitioning process for you, making it a very simple and safe choice. Alternatively, you can choose the "Something else" or "Manual partitioning" option. This will bring up a partitioning tool that lets you manually create, resize, and format partitions. This is a more advanced option, and while it gives you more control, it should only be used if you know what you are doing.</p>
+                <img src="../../img/pages/g-pt4.jpg">
+            </div>
+            <div class="section-center">
+                <h2>Linux partition layouts (manual)</h2>
+                <div id="info-warning">
+                    <h3 class="nf-fa-warning"> Information</h3>
+                    <p>Some older legacy BIOS systems require a 1MB BIOS BOOT partition at the start of the disk. I would recommend the GPT partition layout, as MBR doesnt allow as many partitions</p>
+                </div>
+                <div class="guide-container">
+                    <div class="guide">
+                        <h3>Simple Partition Layout</h3>
+                        <p>This is a simple, yet practical partition layout. This should be the easiest partition layout to manage, and it should have relatively no maintainecne. I would recommended this for most users.</p>
+                        <table>
+                            <tr>
+                                <th>Partition</th>
+                                <th>Size</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>600MB-1GB</td>
+                                <td>EFI Boot Partition</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>4GB+</td>
+                                <td>Linux Swap (optional, read recommended swap below)</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Remaining Space</td>
+                                <td>Linux Root Partition</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="guide">
+                        <h3>Seperate Home Folder Layout</h3>
+                        <p>This is another relatively simple partition layout, but can be more flexible/secure in some cases. This partition layout is simple, but may require extra attention if the root partition is filled.</p>
+                        <table>
+                            <tr>
+                                <th>Partition</th>
+                                <th>Size</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>600MB-1GB</td>
+                                <td>EFI Boot Partition</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>4GB+</td>
+                                <td>Linux Swap (optional, read recommended swap below)</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>35GB-100GB</td>
+                                <td>Linux Root Partition</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Remaining Space</td>
+                                <td>Linux Home Partition</td>
+                        </table>
+                    </div>
+                    <div class="guide">
+                        <h3>How much swap should I have?</h3>
+                        <p>Red Hat recommends the following swap sizes for different RAM size. You can visit the cited Red Hat article below if you wish.</p>
+                        <a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_high_availability_on_red_hat_enterprise_linux/assembly-configuring-high-availability-on-red-hat-enterprise-linux#assembly-configuring-high-availability-on-red-hat-enterprise-linux-determining-swap-size">Determining Swap Size</a>
+                        <table>
+                            <tr>
+                                <th>RAM Size</th>
+                                <th>Recommended Swap</th>
+                                <th>+ Hibernation support</th>
+                            </tr>
+                            <tr>
+                                <td>Less than 2GB</td>
+                                <td>2X current RAM size</td>
+                                <td>3X current RAM size</td>
+                            </tr>
+                            <tr>
+                                <td>2GB - 8GB</td>
+                                <td>Equal to the amount of RAM</td>
+                                <td>6X current RAM size</td>
+                            </tr>
+                            <tr>
+                                <td>8GB - 64GB</td>
+                                <td>Atleast 4GB</td>
+                                <td>1.5X current RAM size</td>
+                            </tr>
+                            <tr>
+                                <td>Over 64GB RAM</td>
+                                <td>Atleast 4GB</td>
+                                <td>Hibernation is not recommended</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id="info-regular">
+                    <h3 class="nf-fa-circle_info"> Information</h3>
+                    <p>These layouts should work around other partitions. Feel free to dualboot Windows (or another OS), and add these partitions after the other partitions.</p>
+                </div>
             </div>
         </div>
     </div> 
@@ -164,7 +265,7 @@
             <a href="../guides/commonissues.html" class="menu-button nf-fae-tools"> Common Issues & Fixes</a>
             <a href="../guides/readingwikis.html" class="menu-button nf-md-file_document"> How to read Wikis</a>
             <a href="../guides/troubleshooting.html" class="menu-button nf-md-auto_fix"> How to Troubleshoot</a>
-            <a href="../guides/appguides.html" class="menu-button nf-md-apps_box"> Specific Apps/Guides</a>
+            <a href="../guides/appguides.html" class="menu-button nf-md-apps_box"> Managing Apps</a>
         </div>
     </div>
 </body>

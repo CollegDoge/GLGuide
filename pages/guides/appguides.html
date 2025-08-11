@@ -36,28 +36,70 @@
 
     <div class="section-main">
         <div class="section-head">
-            <h1 class="nf-md-book_cog"> Specific App Guides</h1>
+            <h1 class="nf-md-book_cog"> Linux Apps, and Managing them</h1>
             <a class="nf-fa-home" onclick="location.href='../../../'"> Home</a>
         </div>
         <div class="section-content">
             <div class="section-left">
                 <div class="section-left-text">
                     <h2>How do I install apps?</h2>
-                    <p>aaaaaaaaaaa</p>
+                    <p>Installing software on Linux is often easier and more secure than on Windows. With Windows, you would usually install apps from a website, or the Microsoft Store. On Linux, you generally install applications with a Package Manager. Linux distributions use package managers to handle management (think installing, uninstalling) of apps, kernel updates, and drivers. Most modern distros have a graphical Software Center that functions like an app store, with the ability to manage apps and updates across your PC (this varies on the distro you choose). It's generally the most beginner friendly way to browse and install software from your distro's official repositories. If you want more flexibility, you can install apps from the terminal, and add different app repositories for more software.</p>
+                    <p>There are also other methods of installing apps, such as universal package formats like Flatpak, Snap, and AppImage. Flatpak and Snap are similar to app stores for Linux, offering a wider range of applications that can be installed on almost any distro. An AppImage is a single file you can download and run without any installation, making it very convenient for portable software. Many of these formats offer the latest software versions and a degree of isolation from the rest of your system, which can be a security bonus.</p>
                 </div>
-                <img src="../../img/pages/">
+                <img src="../../img/pages/g-ag1.jpg">
             </div>
             <div class="section-right">
-                <img src="../../img/pages/">
+                <img src="../../img/pages/g-ag2.jpg">
                 <div class="section-right-text">
-                    <h2>Why so many application formats?</h2>
-                    <p>aaaaaaaaaaa</p>
+                    <h2>Why so many package formats?</h2>
+                    <p>The variety of package formats in Linux is a result of the open-source philosophy and the freedom to create different distributions, each with its own specific needs and goals. Historically, Linux distros developed their own package formats to manage software, which led to the creation of formats like .deb (used by Debian, Ubuntu, and Linux Mint) and .rpm (used by Fedora, Red Hat, and openSUSE). These distro-specific formats are highly optimized for their respective systems and ensure that software works seamlessly with the core operating system.</p>
+                    <p>However, this created a problem for developers who wanted to release their software for all Linux users without having to package it for dozens of different distros. This led to the development of the more modern, universal formats like Flatpak, Snap, and AppImage. These formats bundle an application with all its necessary components, meaning they can run on almost any Linux distro without compatibility issues. So, while the different formats may seem confusing at first, they offer you a fantastic choice between software that is perfectly integrated into your system and software that can run anywhere.</p>
                 </div>
             </div>
             <div class="section-center">
-                <h2>Wine, and why not every windows app will work.</h2>
-                <p>aaaaaaaaaaa</p>
-                <img src="../../img/pages/">
+                <h2>Using Wine, and why not every windows app will work.</h2>
+                <p>While a lot of popular software has a native Linux version, you may have some specific Windows applications you still need to use. That's where Wine comes in. Wine (which stands for "Wine Is Not an Emulator") is a compatibility layer that allows you to run many Windows applications on Linux. Unlike a virtual machine, which simulates an entire computer, Wine translates Windows commands into commands your Linux system understands, giving you better performance and a more seamless experience.</p>
+                <p>The key thing to remember is that Wine doesn't work perfectly with every single Windows application. While many common programs and games run flawlessly, others may not work at all. Before you try to install something, you should check the Wine Application Database (AppDB) to see if the app you want to use is supported and if there are any special instructions. You can install Wine easily with your distro’s package manager or Software Center. Just search for "wine," and your system will handle the rest.</p>
+            </div>
+            <div class="section-center">
+                <h2>Using Package Managers</h2>
+                <div class="guide-container">
+                    <div class="guide">
+                        <h3>Flatpak (Universal across Distros)</h3>
+                        <p>Flatpak is preinstalled on many distributions. Follow the Flatpak website for instructions on how to install it.</p>
+                        <a href="https://flathub.org/setup">https://flathub.org/setup</a>
+                        <p>Once installed, you can install apps through your software store, or via the terminal. Below are some example commands to get you started</p>
+                        <div class="terminalcopy">flatpak search chrome<a class="nf-oct-copy" onclick="copyClip(this.parentNode)"></a></div>
+                        <div class="terminalcopy">flatpak install com.google.Chrome<a class="nf-oct-copy" onclick="copyClip(this.parentNode)"></a></div>
+                        <div class="terminalcopy">flatpak upgrade</p><a class="nf-oct-copy" onclick="copyClip(this.parentNode)"></a></div>
+                        <div class="terminalcopy">flatpak uninstall com.google.Chrome</p><a class="nf-oct-copy" onclick="copyClip(this.parentNode)"></a></div>
+                        <i>1: Search for Google Chrome - 2: Install Chrome - 3: Upgrade all Flatpaks - 4: Uninstall Chrome</i>
+                    </div>
+                    <div class="guide">
+                        <h3>AppImage</h3>
+                        <p>AppImages are portable applications that can be run without installation. You shouldnt really use AppImages unless you have a reason to.</p>
+                        <p>Once an AppImage has been downloaded, you can run it by double clicking it. If this doesnt work, check it has permissions first by running the command below:</p>
+                        <div class="terminalcopy">chmod +x YOURAPP.appImage<a class="nf-oct-copy" onclick="copyClip(this.parentNode)"></a></div>
+                        <i>(make sure you are in the right directory, use 'cd' to navigate. e.g 'cd ~/Downloads')</i>
+                    </div>
+                    <div class="guide">
+                        <h3>Distro Specific Package Managers</h3>
+                        <p>If you are using a distro that has a package manager, you can install apps through the package manager using terminal-based.</p>
+                        <p> For example, heres how you can install firefox on different distros:</p>
+                        <div class="terminalcopy">sudo apt install firefox-esr<a class="nf-oct-copy" onclick="copyClip(this.parentNode)"></a></div>
+                        <i>Ubuntu/Debian based (apt)</i>
+                        <div class="terminalcopy">sudo dnf install firefox<a class="nf-oct-copy" onclick="copyClip(this.parentNode)"></a></div>
+                        <i>Fedora based (dnf)</i>
+                        <div class="terminalcopy">sudo pacman -S firefox<a class="nf-oct-copy" onclick="copyClip(this.parentNode)"></a></div>
+                        <i>Arch based (pacman, or an AUR helper such as 'yay')</i>
+                        <p>Refer to these websites for further information on how to use your distro's package manager:</p>
+                        <div class="guide-buttonrow">
+                            <button class="buttonsec" onclick="location.href='https://documentation.ubuntu.com/server/how-to/software/package-management/'">APT (Debian/Ubuntu)</button>
+                            <button class="buttonsec" onclick="location.href='https://docs.fedoraproject.org/en-US/quick-docs/dnf/'">DNF (Fedora)</button>
+                            <button class="buttonsec" onclick="location.href='https://wiki.archlinux.org/title/Pacman'">Pacman (Arch Linux)</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>    
@@ -159,7 +201,7 @@
             <a href="../guides/commonissues.html" class="menu-button nf-fae-tools"> Common Issues & Fixes</a>
             <a href="../guides/readingwikis.html" class="menu-button nf-md-file_document"> How to read Wikis</a>
             <a href="../guides/troubleshooting.html" class="menu-button nf-md-auto_fix"> How to Troubleshoot</a>
-            <a href="../guides/appguides.html" class="menu-button nf-md-apps_box"> Specific Apps/Guides</a>
+            <a href="../guides/appguides.html" class="menu-button nf-md-apps_box"> Managing Apps</a>
         </div>
     </div>
 </body>
