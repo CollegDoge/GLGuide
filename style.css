@@ -853,7 +853,7 @@ button {
 }
 .button-section.active {
   font-weight: bold;
-  border-bottom: 3px solid var(--text-secondary);
+  border-bottom: 3px solid var(--text-color);
 }
 
 .para-btn {
