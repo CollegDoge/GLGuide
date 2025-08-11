@@ -40,12 +40,10 @@ const audio = document.getElementById("audio");
 const playButton = document.getElementById("playbtn");
 
 if (audio && playButton) {
-    let clickEnabled = true;
-    let originalSrc = "./img/laptop.png";
-    let altSrc = "./img/bsod.png";
-    let scrollSrc = "./img/laptopkde.png";
+    let clickEnabled = true; // when it switches to standard (linux) images
+    let scrollSrc = "./img/laptopkde.png"; // default image
 
-    let imageList = [
+    let imageList = [ // image cycle list
         "./img/laptopkde.png",
         "./img/laptopgnome.png",
         "./img/laptopcinnamon.png",
@@ -353,7 +351,7 @@ function closePreview() { // yes im making this again for the image preview, too
 // create random quote
 const quote = document.querySelector('.randomquote');
 if (quote) {
-    const quotes = [
+    const quotes = [ // random quotes for the about page
         "why wouldnt you just use netbeans",
         "i lost the game, and you did too",
         "i forgot what to write here",
@@ -389,9 +387,10 @@ if (quote) {
         "a rubber room? i dont think so",
         "i have a tape measure next to my bed so i can measure how long i sleep",
         "i am a certified AWS Security Engineer (real)",
-        "hideo kojima has done it again"
+        "hideo kojima has done it again",
+        "am i finished? who knows"
     ];
-    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)]; // random
     quote.textContent = randomQuote;
 }
 
@@ -406,22 +405,22 @@ function applyHighContrast(enabled) {
 
     if (enabled) {
         // enable high contrast
-        body.classList.remove("darkmode");
+        body.classList.remove("darkmode"); // tags
         body.classList.add("highcontrast");
         localStorage.setItem("highcontrast", "true");
 
         if (themeToggle) themeToggle.disabled = true;
 
-        if (section && gradient) {
+        if (section && gradient) { // removes gradients from the website (specifically the gradient on the home page)
             gradient.style.opacity = '0';
             grid.style.opacity = '0';
             section.replaceWith(section.cloneNode(true));
         }
 
-        document.querySelectorAll("svg, img[src$='.svg'], object[type='image/svg+xml']")
+        document.querySelectorAll("svg, img[src$='.svg'], object[type='image/svg+xml']") // removes all SVGS
             .forEach(el => el.style.display = "none");
 
-        if (btn) btn.textContent = "Disable High Contrast";
+        if (btn) btn.textContent = "Disable High Contrast"; // changes button text
     } else {
         // disable high contrast
         body.classList.remove("highcontrast");
@@ -429,26 +428,26 @@ function applyHighContrast(enabled) {
 
         if (themeToggle) themeToggle.disabled = false;
 
-        document.querySelectorAll("svg, img[src$='.svg'], object[type='image/svg+xml']")
+        document.querySelectorAll("svg, img[src$='.svg'], object[type='image/svg+xml']") // adds back svgs
             .forEach(el => el.style.display = "");
 
         const savedTheme = localStorage.getItem("theme");
         const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-        if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+        if (savedTheme === "dark" || (!savedTheme && prefersDark)) { // if darkmode was enabled, bring it back
             body.classList.add("darkmode");
         }
 
-        if (btn) btn.textContent = "Enable High Contrast";
+        if (btn) btn.textContent = "Enable High Contrast"; // changes button text
     }
 }
 
-function highContrastToggle() {
+function highContrastToggle() { // toggles high contrast
     const currentlyEnabled = localStorage.getItem("highcontrast") === "true";
     applyHighContrast(!currentlyEnabled);
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => { // local storage for high contrast
     const shouldEnable = localStorage.getItem("highcontrast") === "true";
     applyHighContrast(shouldEnable);
 });
@@ -459,23 +458,23 @@ function applyLargeText(enabled) {
     const body = document.body;
     const btn = document.getElementById("largetextbtn");
 
-    if (enabled) {
+    if (enabled) { // adds large text body class (see .largetext css section)
         body.classList.add("largetext");
         localStorage.setItem("largetext", "true");
-        if (btn) btn.textContent = "Disable Large Text";
+        if (btn) btn.textContent = "Disable Large Text"; // change button text
     } else {
         body.classList.remove("largetext");
         localStorage.removeItem("largetext");
-        if (btn) btn.textContent = "Enable Large Text";
+        if (btn) btn.textContent = "Enable Large Text"; // change button text
     }
 }
 
-function largeTextToggle() {
+function largeTextToggle() { // toggles large text
     const enabled = localStorage.getItem("largetext") === "true";
     applyLargeText(!enabled);
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => { // local storage for large text
     const enabled = localStorage.getItem("largetext") === "true";
     applyLargeText(enabled);
 });
