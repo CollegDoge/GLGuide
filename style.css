@@ -1465,7 +1465,7 @@ button {
 .issue-container .issue i {
   margin-bottom: 20px;
 }
-.terminal-copy {
+.terminalcopy {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -1475,7 +1475,7 @@ button {
   background-color: var(--base-other);
   border-radius: 10px;
 }
-.terminal-copy a {
+.terminalcopy a {
   color: var(--text-color);
   text-decoration: none;
   cursor: pointer;

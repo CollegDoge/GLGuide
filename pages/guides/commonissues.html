@@ -8,6 +8,7 @@
     <link rel="icon" type="image/x-icon" href="../../img/icon.png">
     <link href="../../style.css" rel="stylesheet" type="text/css">
     <script src="../../scripts.js" defer type="text/javascript" ></script>
+    <script src="../../script/copy.js" defer type="text/javascript" ></script>
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -67,14 +68,14 @@
                         <h3>Some of my apps are pixelated/blurry on my display.</h3>
                         <p>The most likely cause of this is from XWayland applications running under wayland. If you have a display fractionally scaled (e.g 1.5x scaling. 1.25x scaling etc), and an app that is using XWayland (think electron apps such as discord, spotify, and other apps like steam and vscode), this is probably the culprit.</p>
                         <p>You can fix this in most cases by adding this flag to the applications .desktop file trailing the exec section:</p>
-                        <div class="terminal-copy"><p>exec=APPNAME --enable-features=UseOzonePlatform --ozone-platform=wayland</p><a class="nf-oct-copy"></a></div>
+                        <div class="terminalcopy">exec=APPNAME --enable-features=UseOzonePlatform --ozone-platform=wayland<a class="nf-oct-copy" onclick="copyClip(this.parentNode)"></a></div>
                         <i>(/usr/share/applications/abcd.desktop or ~/.local/share/applications/efgh.desktop)</i>
                         <p>if it's a Flatpak application, use the app “Flatseal”, and enable the Wayland windowing system option.</p>
                     </div>
                     <div class="issue">
                         <h3>I can't run scripts or .AppImage files I downloaded.</h3>
                         <p>They're likely not marked as executable. Try running this in a terminal (replace filename with the path to the file)</p>
-                        <div class="terminal-copy"><p>chmod +x filename</p><a class="nf-oct-copy"></a></div>
+                        <div class="terminalcopy">chmod +x filename<a class="nf-oct-copy" onclick="copyClip(this.parentNode)"></a></div>
                         <i>(primarily for .sh files, .AppImage files, and other executeables)</i>
                         <p>You can also do this in most GUI file managers if they don't prompt you already. E.g, in Nautilus, right click, select Properties, and enable the “Executeable as Program” toggle. </p>
                     </div>
