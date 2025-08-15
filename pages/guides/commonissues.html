@@ -49,22 +49,22 @@
             </div>
             <div class="section-center">
                 <h2>5 Common Issues, and how to (probably) fix them</h2>
-                <div class="guide-container">
-                    <div class="guide">
+                <div class="floating-container">
+                    <div class="float-section">
                         <h3>When I try to install, I get a ‘Failed to open \EFI\BOOT\mmx64.efi’ , ‘MokManager’,  ‘Something has gone seriously wrong’ etc on startup.</h3>
                         <p>This can mean multiple things, but in 90% of cases it means you haven't disabled secure boot. Drill this into your head. DISABLE SECURE BOOT!!!</p>
                         <p>It can also sometimes mean other problematic BIOS settings are interfering, such as ‘Fast Startup’, or ‘Legacy boot’ mode. Refer to your motherboard's documentation to change these settings. </p>
                         <p>It also commonly means problems with your boot media, such as improperly created USB flash drives, or corruption. Preferably, use Belena Etcher to flash your ISO (or Ventoy for more advanced use cases), and ensure it has finished before you unplug your flash drive.</p>
                         <p>In rarer cases, something actually has ‘gone seriously wrong’. In this case, you can read this thread with fixes. You should never realistically have to reinstall your distro from scratch, but in some instances, it can be easier than troubleshooting, so always keep this as an option.</p>
                     </div>
-                    <div class="guide">
+                    <div class="float-section">
                         <h3>I can't find any apps using the software store.</h3>
                         <p>You may be missing flatpak (1), flatpak may be disabled/limited (2), or third party software may be disabled (3).</p>
                         <p>1. Ensure flatpak is installed first. The command to install flatpak varies based on your distribution, please refer to your distributions documentation, or do some googling.</p>
                         <p>2. Make sure flatpak is enabled as an option in your software store. If some applications aren't appearing that you would expect, make sure unverified applications are enabled (usually for Linux Mint at the moment). This comes with some privacy concerns, so it's best recommended to use your package manager instead, or download directly from the website if available for your distro.</p>
                         <p>3. This is usually a problem on Fedora. Please refer to Fedora's documentation to get third party applications enabled on your desktop in case you skipped it during the setup. </p>
                     </div>
-                    <div class="guide">
+                    <div class="float-section">
                         <h3>Some of my apps are pixelated/blurry on my display.</h3>
                         <p>The most likely cause of this is from XWayland applications running under wayland. If you have a display fractionally scaled (e.g 1.5x scaling. 1.25x scaling etc), and an app that is using XWayland (think electron apps such as discord, spotify, and other apps like steam and vscode), this is probably the culprit.</p>
                         <p>You can fix this in most cases by adding this flag to the applications .desktop file trailing the exec section:</p>
@@ -72,14 +72,14 @@
                         <i>(/usr/share/applications/abcd.desktop or ~/.local/share/applications/efgh.desktop)</i>
                         <p>If it's a Flatpak application, use the app “Flatseal”, and enable the Wayland windowing system option.</p>
                     </div>
-                    <div class="guide">
+                    <div class="float-section">
                         <h3>I can't run scripts or .AppImage files I downloaded.</h3>
                         <p>They're likely not marked as executable. Try running this in a terminal (replace filename with the path to the file)</p>
                         <div class="terminalcopy">chmod +x filename<a class="nf-oct-copy" onclick="copyClip(this.parentNode)"></a></div>
                         <i>(primarily for .sh files, .AppImage files, and other executeables)</i>
                         <p>You can also do this in most GUI file managers if they don't prompt you already. E.g, in Nautilus, right click, select Properties, and enable the “Executeable as Program” toggle. </p>
                     </div>
-                    <div class="guide">
+                    <div class="float-section">
                         <h3>My games aren't running well, my screen is stuck at low resolution, my external monitor isn't detected etc.</h3>
                         <p>If you are on intel/AMD, drivers typically work out of the box, so try updating your system.</p>
                         <p>If you are on NVIDIA, you may be using the wrong driver. Ensure you are using the proprietary NVIDIA drivers, as these will work significantly better than the open source (usually default) driver (aka Nouveau). Installing these drivers is a different process for each distro, so make sure to look it up online. </p>

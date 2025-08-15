@@ -123,7 +123,7 @@ img {
   font-size: 2em !important;
 }
 
- table {
+table {
   border: 2px solid var(--accent-color);
   border-radius: 8px;
   margin: 12px;
@@ -372,8 +372,12 @@ td {
   .game-others-row {
     flex-direction: column !important;
   }
-  .guide-container {
+  .floating-container {
     width: 100% !important;
+  }
+  .float-section {
+    width: 100% !important;
+    margin: 10px 0px !important;
   }
   .terminalcopy {
     white-space: normal !important;
@@ -1444,45 +1448,10 @@ button {
   text-align: center;
   color: var(--text-secondary)
 }
-.jargon-row {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-.jargon-row h3 {
-  font-size: 20px;
-  padding-top: 40px;
-}
 .desktopwm-row {
   display: flex;
   flex-direction: row;
   gap: 30px;
-}
-.guide-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-.guide-container .guide {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  flex-direction: column;
-  background-color: var(--base-secondary);
-  margin: 10px;
-  padding: 20px;
-  border-radius: 10px;
-}
-.guide-container .guide h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-  max-width: 800px;
-}
-.guide-container .guide i {
-  margin-bottom: 20px;
 }
 .terminalcopy {
   display: flex;
@@ -1659,6 +1628,36 @@ button {
   gap: 10px;
   padding: 10px 0;
   margin: 20px;
+}
+.floating-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.floating-container .float-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  background-color: var(--base-secondary);
+  margin: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  width: 768px;
+}
+.floating-container .float-section h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  max-width: 800px;
+}
+.floating-container .float-section i {
+  margin-bottom: 20px;
+}
+.floating-container .float-section li {
+  margin: 4px;
 }
 
 /* page blur */
